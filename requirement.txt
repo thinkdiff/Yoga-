@@ -1,0 +1,33 @@
+# Project Requirements & Tech Stack
+# Note: This is a Next.js / Node ecosystem project.
+# The actual source of truth for dependencies is 'package.json'. 
+# This file is provided for reference.
+
+# Core Framework
+Next.js (v14.2.3)
+React (v18)
+React DOM (v18)
+TypeScript (v5)
+
+# Styling & Animation
+Tailwind CSS (v3.4.1)
+Framer Motion (v12.38.0)
+Lucide React (Icons)
+Tailwind Merge
+Clsx
+
+# UI Components & Utilities
+Base UI React
+Radix UI Accordion
+Shadcn UI (Custom setup)
+React Hook Form
+Zod (Validation)
+Sonner (Toast notifications)
+Zustand (State management)
+
+# Integration & SEO
+Next Sitemap
+
+# Tooling
+ESLint
+PostCSS
