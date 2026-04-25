@@ -25,9 +25,9 @@ export default function WhyRishikesh() {
 
   return (
     <section className="relative py-24 sm:py-32 overflow-hidden">
-      <Image 
-        src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=1600&q=80" 
-        alt="Himalayan Background"
+      <Image
+        src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80"
+        alt="The Holy Ganga and Himalayan foothills at Rishikesh"
         fill
         className="object-cover absolute inset-0 z-0"
       />

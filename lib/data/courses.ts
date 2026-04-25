@@ -1,17 +1,136 @@
 import { Course } from '../types';
 
+const RISHIKESH_GALLERY = {
+  ganga: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80',
+  ashram: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200&q=80',
+  asana: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80',
+  meditation: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1200&q=80',
+  yogi: 'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=1200&q=80',
+  bridge: 'https://images.unsplash.com/photo-1591291621164-2c6367723315?w=1200&q=80',
+  flow: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=1200&q=80',
+  group: 'https://images.unsplash.com/photo-1571417228847-2bf0d96a92dd?w=1200&q=80',
+  sunset: 'https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=1200&q=80',
+  aarti: 'https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=1200&q=80',
+  himalaya: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80',
+  candle: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1200&q=80',
+};
+
+const galleryFor = (...keys: (keyof typeof RISHIKESH_GALLERY)[]) =>
+  keys.map((k) => RISHIKESH_GALLERY[k]);
+
+const ALL_TEACHERS = ['t1', 't2', 't3'];
+
 const commonLong200: string[] = [
   'At Nirvana Yoga School, the 200-Hour Yoga Teacher Training is both a certification and a rite of passage — an initiation into a profoundly transformative path of self-discovery, healing, and empowerment. Recognised by Yoga Alliance USA, this foundational course is carefully designed to balance practical learning with the rich philosophy and timeless wisdom that yoga embodies.',
-  'Rishikesh — the sacred birthplace of yoga and the town cradled by the shimmering waters of the Holy Ganga — is the setting for your journey. For 25 immersive days you live, breathe, eat, and study yoga in one of the most revered spiritual ecosystems on earth.',
-  'Our curriculum consists of a robust framework in asana (postures), pranayama (breathwork), meditation, yoga anatomy, teaching methodology, adjustments, and the philosophical lineages of Hatha and Ashtanga Vinyasa. You will gain not only the certification, but a deeper sense of presence, purpose, and peace in your own life.',
-  'Yet beyond the technique and knowledge, there exists a subtler transformation: the internal shift that takes place when mind, body, and spirit coalesce in harmony. This journey — whether you intend to teach or only grow — will awaken a deeper sense of presence, purpose, and peace within you.',
+  'Rishikesh — the sacred birthplace of yoga, cradled by the shimmering waters of the Holy Ganga — is the setting for your journey. For 25 immersive days you live, breathe, eat, and study yoga in one of the most revered spiritual ecosystems on earth.',
+  'Our curriculum offers a robust framework in asana, pranayama, meditation, anatomy, teaching methodology, adjustments, and the philosophical lineages of Hatha, Ashtanga Vinyasa and Kundalini. Beyond technique, the deeper transformation arises quietly: when mind, body and spirit settle into harmony, a new sense of presence, purpose and peace begins to take root within you.',
+];
+
+const commonLong300: string[] = [
+  'The 300-Hour Yoga Teacher Training is a deepening — a return to the inner work after the 200-Hour foundation. Designed for sincere practitioners ready to refine their teaching and their practice, this advanced course extends asana, pranayama, philosophy and therapeutic skills.',
+  'Set in Rishikesh on the banks of the Ganga, the programme weaves together study, sadhana, satsang and silence. You will learn to teach with greater nuance, sequence with greater intelligence, and hold space for students with humility.',
+  'Graduates emerge as RYT-500 eligible teachers — equipped with the lineage, lived practice, and inner clarity to share yoga as a living tradition rather than a workout.',
+];
+
+const commonLong500: string[] = [
+  'The 500-Hour Yoga Teacher Training is the complete journey — combining our 200-Hour foundation and 300-Hour advanced training in a single immersion of nearly two months. It is for those who wish to embody yoga as a way of life and a vocation.',
+  'In Rishikesh, surrounded by the Himalayas and the steady rhythm of the Ganga, you will pass through every layer of the practice — from the gross body of asana to the subtle architecture of breath, energy and consciousness.',
+  'On completion you receive Yoga Alliance USA RYT-500 certification, but the real gift is harder to name: a quieter mind, a more honest heart, and a teaching presence rooted in your own direct experience.',
+];
+
+const baseInclusions = [
+  'Yoga Alliance USA registered certification',
+  'Comfortable private/shared accommodation in Tapovan, Rishikesh',
+  'Three sattvic vegetarian meals daily, prepared with Ayurvedic principles',
+  'All course manuals, study materials and a yoga mat',
+  'Weekend Himalayan excursions and Ganga aarti at Parmarth Niketan',
+  'Daily mantra chanting, kirtan and group satsang',
+  'Free airport pickup from Dehradun (DED)',
+];
+
+const shortInclusions = [
+  'Course completion certificate',
+  'Comfortable accommodation in Tapovan, Rishikesh',
+  'Three sattvic vegetarian meals daily',
+  'All course materials and study handouts',
+  'Ganga aarti and one local excursion',
 ];
 
 export const courses: Course[] = [
+  // ─────────────────────────────────────────────────────────────
+  // 1. 100-Hour Hatha Ashtanga Vinyasa
+  // ─────────────────────────────────────────────────────────────
   {
-    id: 'c1',
+    id: 'c100hav',
+    slug: '100hr-hatha-ashtanga-vinyasa',
+    title: '100-Hour Hatha Ashtanga Vinyasa YTT, Rishikesh',
+    category: '200 Hour',
+    format: 'in-person',
+    duration: '12 days',
+    style: ['Hatha', 'Ashtanga', 'Vinyasa'],
+    price: { usd: 799, inr: 66000, earlyBirdUsd: 599 },
+    depositUsd: 200,
+    startDates: ['Oct 5, 2026', 'Nov 5, 2026', 'Dec 5, 2026'],
+    description:
+      'A 12-day immersion in the foundations of Hatha and Ashtanga Vinyasa — perfect for sincere practitioners who want a structured first step into yogic study without committing to a full 200-Hour course.',
+    longDescription: [
+      'Our 100-Hour Hatha Ashtanga Vinyasa Course is a focused, 12-day foundation programme set on the banks of the Holy Ganga in Rishikesh. It is designed for students who want to deepen their personal practice and lay an honest foundation for future teacher training.',
+      'You will learn the traditional Hatha postures, the Ashtanga Vinyasa Primary Series with its breath-led vinyasa count, the essentials of pranayama and meditation, and the philosophical roots of yoga as taught in Patanjali’s Yoga Sutras.',
+      'On completion, the 100-Hour can be credited toward our 200-Hour Yoga Teacher Training, allowing you to continue your study at your own rhythm.',
+    ],
+    curriculum: [
+      'Foundations of Hatha Yoga',
+      'Ashtanga Vinyasa Primary Series — short form',
+      'Pranayama essentials',
+      'Introduction to meditation',
+      'Yoga philosophy & lifestyle',
+    ],
+    curriculumModules: [
+      {
+        title: 'Asana — Foundations',
+        topics: [
+          'Sun salutations A & B with vinyasa count',
+          'Standing and seated Hatha postures',
+          'Alignment principles and use of props',
+          'Introduction to the Ashtanga Primary Series',
+        ],
+      },
+      {
+        title: 'Pranayama & Meditation',
+        topics: [
+          'Nadi Shodhana, Bhastrika, Ujjayi & Bhramari',
+          'Breath awareness and natural breath observation',
+          'Trataka, mantra japa and silent sitting',
+        ],
+      },
+      {
+        title: 'Anatomy & Philosophy',
+        topics: [
+          'Functional anatomy for the yogi',
+          'Eight limbs of yoga (Ashtanga of Patanjali)',
+          'Yamas, niyamas and the yogic lifestyle',
+        ],
+      },
+    ],
+    inclusions: shortInclusions.concat([
+      '100-Hour course completion certificate',
+      'Credit transfer toward our 200-Hour YTT',
+    ]),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('asana', 'ganga', 'group'),
+    gallery: galleryFor('asana', 'ganga', 'group', 'meditation', 'sunset'),
+    seoTitle: '100 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh | Nirvana Yoga School',
+    seoDescription:
+      '100 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh, India. 12-day foundation immersion on the banks of the Ganga. Yoga Alliance lineage. Enrol today.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 2. 200-Hour Hatha Ashtanga Vinyasa
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'c200hav',
     slug: '200hr-hatha-ashtanga-vinyasa',
-    title: '200-Hour Hatha Ashtanga Vinyasa YTT',
+    title: '200-Hour Hatha Ashtanga Vinyasa YTT, Rishikesh',
     category: '200 Hour',
     format: 'in-person',
     duration: '25 days',
@@ -61,7 +180,7 @@ export const courses: Course[] = [
       {
         title: 'Philosophy & Lifestyle',
         topics: [
-          'Patanjali\u2019s Yoga Sutras — the Eight Limbs of Yoga',
+          'Patanjali’s Yoga Sutras — the Eight Limbs of Yoga',
           'Bhagavad Gita — Karma, Bhakti and Jnana Yoga',
           'History and lineage of Hatha and Ashtanga Yoga',
           'Ethics, yamas & niyamas, and the yogic lifestyle',
@@ -78,544 +197,788 @@ export const courses: Course[] = [
       {
         title: 'Teaching Methodology & Practicum',
         topics: [
-          'Class structure, sequencing, and pace',
-          'Voice, presence, and the language of instruction',
-          'Group teaching practice with peer and faculty feedback',
-          'Ethics and business of being a yoga teacher',
+          'Sequencing a balanced 60–90 minute class',
+          'Voice, demonstration and language of cueing',
+          'Hands-on adjustments and student observation',
+          'Practice teaching with peer and faculty feedback',
         ],
       },
     ],
-    inclusions: [
-      '25 nights private or shared accommodation',
-      '3 sattvic vegetarian meals daily',
-      'Course manuals and printed materials',
-      'Yoga mat, blocks, and shatkarma kit',
-      'Weekend Himalayan excursion',
-      'Ganges aarti visit, kirtan and sound healing sessions',
-      'Full moon / new moon fire ritual',
-      'Yoga Alliance RYT 200 certification',
-    ],
-    teachers: ['t1', 't2'],
-    images: [
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1400&q=80',
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80',
-      'https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=1400&q=80',
-    ],
-    roadmap: [
-      { title: 'The Vision', topics: ['Shatkarma & Cleansing', 'Breathwork (Pranayama)', 'Foundations of Hatha'] },
-      { title: 'The Alignment', topics: ['Ashtanga Vinyasa Primary Series', 'Anatomy of Postures', 'Adjustment Techniques'] },
-      { title: 'The Wisdom', topics: ['Yoga Philosophy', 'Bhagavad Gita Study', 'Meditation Practices'] },
-      { title: 'The Teacher', topics: ['Teaching Practicum', 'Class Sequencing', 'Graduation Ceremony'] },
-    ],
-    registrationSteps: [
-      'Fill out the online application form',
-      'Pay the $250 non-refundable deposit',
-      'Receive your acceptance letter and welcome kit',
-      'Arrive in Rishikesh and begin your journey',
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
-      'https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=800&q=80',
-      'https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=800&q=80',
-      'https://images.unsplash.com/photo-1591291621164-2c6367723315?w=800&q=80',
-    ],
-    certificateImage: 'https://images.unsplash.com/photo-1606326666430-da3861f2f62b?w=800&q=80',
-    faqs: [
-      { question: 'Is this course suitable for beginners?', answer: 'Yes, our 200-hour program is designed for all levels, including those new to yoga who are ready for an immersive experience.' },
-      { question: 'What is the certification I will receive?', answer: 'You will receive an RYT 200 certificate registered with Yoga Alliance USA, which is recognized globally.' },
-    ],
-    highlights: [
-      { icon: 'sparkles', text: 'Yoga Alliance Certified' },
-      { icon: 'users', text: 'Small Batches (Max 20)' },
-      { icon: 'graduation-cap', text: 'Experienced Faculty' },
-      { icon: 'flame', text: 'Authentic Himalayan Tradition' },
-    ],
-    certification:
-      'Upon successful completion of attendance, assessments, and a teaching practicum, graduates receive an RYT 200 certificate registered with Yoga Alliance USA — recognised internationally in more than 160 countries.',
-    paymentLink: 'https://buy.stripe.com/test_200hr_hatha_ashtanga',
-    seoTitle: '200 Hour Hatha Ashtanga Vinyasa YTT in Rishikesh, India',
+    inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-200 certification']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('asana', 'ganga', 'group'),
+    gallery: galleryFor('asana', 'ganga', 'group', 'meditation', 'aarti'),
+    seoTitle: '200 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
     seoDescription:
-      'Join our 25-day 200 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training in Rishikesh. Yoga Alliance certified.',
+      '200 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh India. 25-day Yoga Alliance certified RYT-200 immersion on the banks of the Ganga. Reserve your seat.',
   },
+
+  // ─────────────────────────────────────────────────────────────
+  // 3. 300-Hour Hatha Ashtanga Vinyasa
+  // ─────────────────────────────────────────────────────────────
   {
-    id: 'c2',
-    slug: '200hr-ayurveda-hatha',
-    title: '200-Hour Ayurveda Hatha YTT',
-    category: '200 Hour',
+    id: 'c300hav',
+    slug: '300hr-hatha-ashtanga-vinyasa',
+    title: '300-Hour Hatha Ashtanga Vinyasa YTT, Rishikesh',
+    category: '300 Hour',
     format: 'in-person',
-    duration: '25 days',
-    style: ['Hatha', 'Ayurveda'],
-    price: { usd: 1399, inr: 116000, earlyBirdUsd: 1049 },
-    depositUsd: 250,
-    startDates: ['Oct 15, 2026', 'Nov 15, 2026'],
+    duration: '30 days',
+    style: ['Hatha', 'Ashtanga', 'Vinyasa'],
+    price: { usd: 1999, inr: 166000, earlyBirdUsd: 1499 },
+    depositUsd: 300,
+    startDates: ['Oct 1, 2026', 'Dec 1, 2026', 'Feb 1, 2027'],
     description:
-      'Blend the ancient science of Ayurveda with foundational Hatha practices. Learn to adapt asana, diet, and daily rhythm to each person\u2019s dosha — a complete path to balance body, mind, and spirit.',
-    longDescription: [
-      'This 25-day immersion brings together two of India\u2019s great sister sciences — Hatha Yoga and Ayurveda — so you graduate with both a Yoga Alliance RYT 200 certificate and a practical, personal understanding of ayurvedic lifestyle.',
-      'You will learn to assess your own dosha, design asana and pranayama that support your constitution, and cook sattvic meals in the Himalayan foothills. Classical Hatha practice forms the structural backbone of each day, complemented by anatomy, philosophy, and supervised teaching practice.',
-      'Taught by qualified Ayurvedic doctors and senior yoga faculty, this course is ideal for students who want yoga to be a full-life practice, not just an hour on the mat.',
-    ],
+      'An advanced 30-day deepening for RYT-200 graduates — refined alignment, the Intermediate Series of Ashtanga, advanced pranayama and a teaching practicum that prepares you to lead with clarity and humility.',
+    longDescription: commonLong300,
     curriculum: [
-      'Ayurvedic Principles & Dosha Assessment',
-      'Dosha-Balancing Asana & Pranayama',
-      'Ayurvedic Diet and Nutrition',
-      'Hatha Yoga Asanas & Alignment',
-      'Daily & Seasonal Routines (Dinacharya & Ritucharya)',
+      'Ashtanga Vinyasa Intermediate Series',
+      'Advanced Hatha and pranayama',
+      'Sequencing & adjustments — advanced',
+      'Yoga therapy fundamentals',
+      'Teaching methodology — advanced',
+      'Patanjali, Hatha Yoga Pradipika & Bhagavad Gita',
     ],
     curriculumModules: [
       {
-        title: 'Foundations of Ayurveda',
-        topics: ['Tri-dosha theory — Vata, Pitta, Kapha', 'Prakriti & Vikriti self-assessment', 'Agni, ama, and the roots of disease'],
+        title: 'Advanced Asana',
+        topics: [
+          'Ashtanga Vinyasa Intermediate Series',
+          'Advanced Hatha postures, inversions and arm balances',
+          'Refined alignment and the use of bandhas',
+        ],
       },
       {
-        title: 'Hatha Asana & Pranayama',
-        topics: ['Classical Hatha asana sequences', 'Dosha-specific pranayama', 'Mudras, bandhas, and shatkarma'],
+        title: 'Pranayama & Subtle Body',
+        topics: [
+          'Advanced pranayama techniques',
+          'Nadis, chakras and the koshas in practice',
+          'Mantra and bija sound work',
+        ],
       },
       {
-        title: 'Ayurvedic Lifestyle',
-        topics: ['Dinacharya — ideal daily routine', 'Ritucharya — seasonal routine', 'Food energetics and cooking basics'],
+        title: 'Yoga Therapy',
+        topics: [
+          'Therapeutic sequencing for back, knee and shoulder care',
+          'Working with stress, anxiety and insomnia',
+          'Foundations of one-on-one yoga therapy',
+        ],
       },
       {
-        title: 'Anatomy, Philosophy & Teaching',
-        topics: ['Functional anatomy for yoga teachers', 'Yoga Sutras of Patanjali', 'Teaching methodology and supervised practicum'],
+        title: 'Philosophy — Advanced',
+        topics: [
+          'Hatha Yoga Pradipika in depth',
+          'Patanjali’s Yoga Sutras (deeper study)',
+          'Bhagavad Gita — Jnana, Bhakti and Karma',
+        ],
+      },
+      {
+        title: 'Teaching Practicum',
+        topics: [
+          'Designing and leading multi-week training arcs',
+          'Hands-on adjustments — advanced',
+          'Mentored teaching with feedback',
+        ],
       },
     ],
-    inclusions: [
-      '25 nights accommodation',
-      'Ayurvedic sattvic meals',
-      'Personal Ayurvedic consultation',
-      'Course materials, yoga mat and blocks',
-      'Himalayan excursion',
-      'Sound healing and kirtan sessions',
-      'Yoga Alliance RYT 200 certification',
-    ],
-    teachers: ['t2'],
-    images: [
-      'https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=1400&q=80',
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80',
-    ],
-    roadmap: [
-      { title: 'The Elements', topics: ['Introduction to Panchamahabhuta', 'Dosha Theory', 'Sattvic Diet Foundations'] },
-      { title: 'The Balance', topics: ['Ayurvedic Asana Alignment', 'Pranayama for Doshas', 'Dinacharya Practices'] },
-      { title: 'The Healing', topics: ['Herbal Basics', 'Ayurvedic Massage Theory', 'Cleansing (Kriyas)'] },
-      { title: 'The Integration', topics: ['Ayurvedic Consultation Skills', 'Teaching Practicum', 'Graduation'] },
-    ],
-    registrationSteps: [
-      'Submit application form with health details',
-      'Pay $250 deposit to confirm slot',
-      'Pre-course reading material access',
-      'Joining instructions and travel guide shared',
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
-      'https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=800&q=80',
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
-    ],
-    certification:
-      'Graduates receive an RYT 200 certificate registered with Yoga Alliance USA, plus a Nirvana Yoga School Certificate in Ayurvedic Lifestyle.',
-    paymentLink: 'https://buy.stripe.com/test_200hr_ayurveda',
-    seoTitle: '200 Hour Ayurveda Hatha YTT in Rishikesh | Nirvana Yoga',
+    inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-500 (300hr) certification']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('flow', 'ashram', 'himalaya'),
+    gallery: galleryFor('flow', 'ashram', 'himalaya', 'meditation', 'sunset'),
+    seoTitle: '300 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
     seoDescription:
-      'Discover balance and healing through our Ayurveda and Hatha Yoga Teacher Training in Rishikesh.',
+      '300 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh India. Advanced 30-day RYT-500 immersion for RYT-200 graduates. Apply for our next batch.',
   },
+
+  // ─────────────────────────────────────────────────────────────
+  // 4. 200-Hour Hatha Kundalini
+  // ─────────────────────────────────────────────────────────────
   {
-    id: 'c3',
-    slug: '200hr-meditation-yoga-nidra',
-    title: '200-Hour Meditation, Yoga Nidra & Hatha YTT',
+    id: 'c200hk',
+    slug: '200hr-hatha-kundalini',
+    title: '200-Hour Hatha Kundalini YTT, Rishikesh',
     category: '200 Hour',
     format: 'in-person',
     duration: '25 days',
-    style: ['Hatha', 'Meditation', 'Yoga Nidra'],
-    price: { usd: 1299, inr: 108000, earlyBirdUsd: 974 },
-    depositUsd: 250,
-    startDates: ['Oct 5, 2026', 'Dec 5, 2026'],
-    description:
-      'Deepen your inner journey through extensive practices in meditation and Yoga Nidra, supported by gentle Hatha asana and pranayama. Ideal for students drawn to the subtle and contemplative side of yoga.',
-    longDescription: [
-      'This 25-day immersion places meditation and Yoga Nidra at the heart of a classical 200-hour teacher training, with Hatha asana and pranayama as supporting practices. You will learn to sit, to relax, and to guide others into deep, restorative states of consciousness.',
-      'Taught in the quiet hills of Rishikesh by senior meditation teachers, the course weaves together technique, philosophy, and practice. You will leave with a daily sadhana, a catalogue of scripts and techniques, and the confidence to teach meditation and Yoga Nidra in studios, one-on-one, or online.',
-    ],
-    curriculum: [
-      'Techniques of Meditation (trataka, mantra, vipassana)',
-      'Yoga Nidra Scripts & Facilitation',
-      'Subtle Anatomy — Chakras, Nadis, Koshas',
-      'Hatha Asana for Sitting',
-      'Yoga Philosophy & Self-Inquiry',
-    ],
-    curriculumModules: [
-      {
-        title: 'Meditation Techniques',
-        topics: ['Trataka, mantra japa, breath awareness', 'Vipassana and self-inquiry', 'Building a personal sadhana'],
-      },
-      {
-        title: 'Yoga Nidra Facilitation',
-        topics: ['The 8 stages of Yoga Nidra', 'Sankalpa — intention setting', 'Scripting and voice delivery', 'Teaching practicum'],
-      },
-      {
-        title: 'Subtle Anatomy & Philosophy',
-        topics: ['Chakras, nadis, and koshas', 'Sankhya and Vedanta foundations', 'Patanjali\u2019s Yoga Sutras'],
-      },
-      {
-        title: 'Asana, Pranayama & Teaching',
-        topics: ['Hatha asana for seated practice', 'Pranayama — nadi shodhana, bhramari', 'Teaching methodology'],
-      },
-    ],
-    inclusions: [
-      '25 nights accommodation',
-      '3 sattvic vegetarian meals daily',
-      'Textbooks, scripts and mala beads',
-      'Ganges aarti visit',
-      'Silent-day retreat',
-      'Sound healing and kirtan sessions',
-      'Yoga Alliance RYT 200 certification',
-    ],
-    teachers: ['t3', 't4'],
-    images: [
-      'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=1400&q=80',
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80',
-    ],
-    roadmap: [
-      { title: 'Inner Stillness', topics: ['Breath Awareness', 'Body Scanning', 'Sitting Postures'] },
-      { title: 'Deep Relaxation', topics: ['Yoga Nidra Stages', 'Sankalpa (Intention)', 'Voice Cultivation'] },
-      { title: 'Philosophy', topics: ['Vedanta Basics', 'Mindfulness in Life', 'Silence Practice'] },
-      { title: 'Teaching', topics: ['Guiding Sessions', 'Class Sequencing', 'Certification'] },
-    ],
-    registrationSteps: [
-      'Apply online',
-      'Deposit payment of $250',
-      'Welcome pack and scripts delivery',
-      'Commencement of journey',
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800&q=80',
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
-    ],
-    certification:
-      'Graduates receive an RYT 200 certificate registered with Yoga Alliance USA, with a specialisation in Meditation and Yoga Nidra.',
-    paymentLink: 'https://buy.stripe.com/test_200hr_meditation',
-    seoTitle: 'Meditation & Yoga Nidra Teacher Training in Rishikesh',
-    seoDescription:
-      'Immerse in the profound practices of Meditation and Yoga Nidra over 25 days in Rishikesh.',
-  },
-  {
-    id: 'c4',
-    slug: '200hr-kundalini-hatha',
-    title: '200-Hour Kundalini Hatha YTT',
-    category: '200 Hour',
-    format: 'in-person',
-    duration: '25 days',
-    style: ['Kundalini', 'Hatha'],
+    style: ['Hatha', 'Kundalini', 'Meditation'],
     price: { usd: 1399, inr: 116000, earlyBirdUsd: 1049 },
     depositUsd: 250,
-    startDates: ['Nov 1, 2026', 'Jan 1, 2027'],
+    startDates: ['Nov 1, 2026', 'Jan 1, 2027', 'Mar 1, 2027'],
     description:
-      'Awaken your dormant energy through the potent practices of Kundalini alongside grounding Hatha. Explore kriyas, bandhas, and chakras with teachers trained in the classical Himalayan tradition.',
-    longDescription: [
-      'Our 200-Hour Kundalini Hatha YTT is a 25-day initiation into the energetic side of yoga. Taught in the classical Himalayan tradition (not the 3HO/Yogi Bhajan lineage), this course blends traditional kriyas, bandhas, and chakra work with the structural container of Hatha asana.',
-      'Expect early mornings, fire rituals, mantra chanting, and long sessions of pranayama, alongside a rigorous curriculum in anatomy, philosophy, and teaching practice. The course is held in our ashram in Tapovan — a place of naturally heightened prana.',
-    ],
+      'A 25-day Yoga Alliance certified training that blends the steadiness of Hatha with the energetic awakening of Kundalini Yoga — kriyas, mantras, meditation and the subtle anatomy of the chakras.',
+    longDescription: commonLong200,
     curriculum: [
-      'Kundalini Kriyas & Bandhas',
-      'Chakra Awakening & Meditation',
-      'Hatha Asanas for Energetic Stability',
-      'Mantra Chanting & Sound',
-      'Philosophy of Tantra & Kundalini',
+      'Hatha Yoga foundations',
+      'Kundalini Yoga kriyas',
+      'Mantra & sound practice',
+      'Pranayama & bandhas',
+      'Subtle anatomy — chakras & nadis',
+      'Teaching methodology',
     ],
     curriculumModules: [
       {
         title: 'Kundalini Kriyas',
-        topics: ['Classical kundalini kriyas of the Himalayan tradition', 'Shatkarmas and energetic cleansing', 'Safety, contraindications and integration'],
+        topics: [
+          'Classical Kundalini kriyas as taught in the Himalayan tradition',
+          'Breath of fire (Agni Pran) and rapid pranayama',
+          'Bandhas — Mula, Uddiyana, Jalandhara',
+        ],
       },
       {
-        title: 'Chakras, Bandhas & Mudras',
-        topics: ['The seven chakras in practice', 'Mula, Uddiyana, Jalandhara bandhas', 'Mudras for energy direction'],
+        title: 'Hatha Foundations',
+        topics: [
+          'Traditional Hatha asanas and sequencing',
+          'Alignment and modifications',
+          'Sun salutations and warm-up flows',
+        ],
       },
       {
-        title: 'Mantra, Meditation & Philosophy',
-        topics: ['Beej mantras and chakra seed sounds', 'Kirtan and bhakti practice', 'Tantra and kundalini philosophy'],
+        title: 'Mantra & Sound',
+        topics: [
+          'Bija mantras and the chakras',
+          'Daily kirtan and call-and-response chanting',
+          'Mantra japa with the mala',
+        ],
       },
       {
-        title: 'Hatha Asana & Teaching',
-        topics: ['Hatha asanas for energetic stability', 'Teaching methodology and practicum', 'Ethics and business'],
+        title: 'Subtle Anatomy',
+        topics: [
+          'Seven chakras — practice and teaching',
+          'Ida, Pingala and Sushumna nadis',
+          'Koshas — the five sheaths',
+        ],
+      },
+      {
+        title: 'Philosophy & Practicum',
+        topics: [
+          'Patanjali’s Yoga Sutras',
+          'Yamas, niyamas and the yogic lifestyle',
+          'Teaching methodology and practicum',
+        ],
       },
     ],
-    inclusions: [
-      '25 nights accommodation',
-      'Sattvic meals',
-      'Course materials',
-      'Himalayan spiritual trek',
-      'Fire ritual and full-moon ceremony',
-      'Yoga Alliance RYT 200 certification',
-    ],
-    teachers: ['t1', 't3'],
-    images: [
-      'https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=1400&q=80',
-      'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=1400&q=80',
-    ],
-    highlightVideoId: 'GLy2rYHwUqY',
-    studentVideoIds: ['wX78iKhInsc', 'ScMzIvxBSi4', 'inpok4MKVLM'],
-    certification:
-      'RYT 200 certificate registered with Yoga Alliance USA, with a Nirvana Yoga specialisation in Kundalini.',
-    paymentLink: 'https://buy.stripe.com/test_200hr_kundalini',
-    seoTitle: 'Kundalini Hatha YTT 200 Hour | Rishikesh',
+    inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-200 certification', 'Daily kirtan and mantra session']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('meditation', 'aarti', 'yogi'),
+    gallery: galleryFor('meditation', 'aarti', 'yogi', 'candle', 'ganga'),
+    seoTitle: '200 Hour Hatha Kundalini Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
     seoDescription:
-      'Transform your energy through our 25-day Kundalini Hatha Yoga Teacher Training in Rishikesh.',
+      '200 hour Hatha Kundalini yoga teacher training course in Rishikesh India. 25-day Yoga Alliance RYT-200 immersion blending kriyas, mantra and Hatha. Enrol today.',
   },
+
+  // ─────────────────────────────────────────────────────────────
+  // 5. 300-Hour Hatha Kundalini
+  // ─────────────────────────────────────────────────────────────
   {
-    id: 'c5',
-    slug: '300hr-advanced-ytt',
-    title: '300-Hour Hatha Ashtanga Vinyasa Ayurveda Yoga Therapy YTT',
+    id: 'c300hk',
+    slug: '300hr-hatha-kundalini',
+    title: '300-Hour Hatha Kundalini YTT, Rishikesh',
     category: '300 Hour',
     format: 'in-person',
     duration: '30 days',
-    style: ['Hatha', 'Ashtanga', 'Vinyasa', 'Ayurveda', 'Yoga Therapy'],
-    price: { usd: 1999, inr: 166000, earlyBirdUsd: 1499 },
+    style: ['Hatha', 'Kundalini', 'Meditation'],
+    price: { usd: 2099, inr: 174000, earlyBirdUsd: 1574 },
     depositUsd: 300,
-    startDates: ['Oct 1, 2026', 'Dec 1, 2026'],
+    startDates: ['Oct 15, 2026', 'Jan 15, 2027'],
     description:
-      'For graduates of a 200-hour program. Advance your teaching and personal practice with deeper work in Ashtanga Vinyasa, Ayurveda, and therapeutic applications of yoga.',
-    longDescription: [
-      'Our 300-Hour Advanced YTT is designed for yoga teachers who have completed a 200-hour course (with any Yoga Alliance school) and are ready to go deeper — in their personal practice and in their teaching.',
-      'Over 30 days we work intensively on Ashtanga Intermediate Series, advanced Hatha, therapeutic applications for common conditions (back pain, anxiety, digestive issues), and Ayurvedic assessment.',
-      'Graduates register with Yoga Alliance as RYT 500 once combined with their 200-hour certificate.',
-    ],
+      'An advanced 30-day deepening into Hatha and Kundalini Yoga — advanced kriyas, mantra sadhana, chakra meditation and the teaching of subtle-body practices.',
+    longDescription: commonLong300,
     curriculum: [
-      'Advanced Asana & Arm Balances',
-      'Applied Yoga Therapy for Common Conditions',
-      'Advanced Anatomy & Biomechanics',
-      'Ayurvedic Assessment & Therapy',
-      'Teaching Methodology & Adjustments',
+      'Advanced Kundalini kriyas',
+      'Advanced Hatha and pranayama',
+      'Mantra sadhana & chanting',
+      'Chakra meditation in depth',
+      'Teaching subtle-body practices',
+      'Yoga philosophy — Hatha Yoga Pradipika & Tantra texts',
     ],
-    inclusions: [
-      '30 nights accommodation',
-      'Sattvic food',
-      'Advanced manuals',
-      'Multiple Himalayan excursions',
-      'Ayurvedic therapy session',
-      'Yoga Alliance RYT 300 certification',
+    curriculumModules: [
+      {
+        title: 'Advanced Kriya & Pranayama',
+        topics: [
+          'Long-form classical Kundalini kriyas',
+          'Advanced bandhas and mudras',
+          'Pranayama for awakening prana shakti',
+        ],
+      },
+      {
+        title: 'Mantra Sadhana',
+        topics: [
+          'Personal mantra practice (japa with mala)',
+          'Bija mantras and chakra activation',
+          'Kirtan leadership skills',
+        ],
+      },
+      {
+        title: 'Chakra & Subtle Body',
+        topics: [
+          'Chakra meditation — guided practice',
+          'Awakening Sushumna nadi safely',
+          'Working ethically with energy practices',
+        ],
+      },
+      {
+        title: 'Philosophy — Tantric & Hatha',
+        topics: [
+          'Hatha Yoga Pradipika in depth',
+          'Introduction to classical Tantra',
+          'Patanjali on samadhi',
+        ],
+      },
+      {
+        title: 'Teaching Practicum',
+        topics: [
+          'Designing safe Kundalini classes',
+          'Adjustments and energy ethics',
+          'Mentored teaching with feedback',
+        ],
+      },
     ],
-    teachers: ['t1', 't2', 't5'],
-    images: [
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1400&q=80',
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80',
-    ],
-    highlightVideoId: 'v7AYKMP6rOE',
-    studentVideoIds: ['wX78iKhInsc', 'ScMzIvxBSi4', 'inpok4MKVLM'],
-    eligibility: [
-      'Completed Yoga Alliance-registered 200-hour YTT (with any school).',
-      'Minimum 6 months of personal asana practice.',
-      'Intermediate English comprehension.',
-      'Good physical and mental health.',
-    ],
-    certification:
-      'Graduates receive an RYT 300 certificate from Yoga Alliance USA. Combined with your 200-hour, this qualifies you to register as an RYT 500.',
-    paymentLink: 'https://buy.stripe.com/test_300hr_advanced',
-    seoTitle: '300 Hour Advanced Yoga Teacher Training in Rishikesh',
+    inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-500 (300hr) certification', 'Daily kirtan and mantra session']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('candle', 'aarti', 'meditation'),
+    gallery: galleryFor('candle', 'aarti', 'meditation', 'yogi', 'sunset'),
+    seoTitle: '300 Hour Hatha Kundalini Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
     seoDescription:
-      'Step into the next level of teaching with our 300 Hour Advanced Hatha Ashtanga Vinyasa Ayurveda Yoga Therapy YTT.',
+      '300 hour Hatha Kundalini yoga teacher training course in Rishikesh India. Advanced 30-day RYT-500 immersion in kriyas, mantra and chakra sadhana. Reserve your place.',
   },
+
+  // ─────────────────────────────────────────────────────────────
+  // 6. 500-Hour Hatha Ashtanga Vinyasa
+  // ─────────────────────────────────────────────────────────────
   {
-    id: 'c6',
-    slug: '500hr-comprehensive-ytt',
-    title: '500-Hour Hatha Ashtanga Vinyasa Ayurveda Yoga Therapy YTT',
+    id: 'c500hav',
+    slug: '500hr-hatha-ashtanga-vinyasa',
+    title: '500-Hour Hatha Ashtanga Vinyasa YTT, Rishikesh',
     category: '500 Hour',
     format: 'in-person',
-    duration: '55 days',
-    style: ['Hatha', 'Ashtanga', 'Vinyasa', 'Meditation', 'Ayurveda', 'Yoga Therapy'],
+    duration: '60 days',
+    style: ['Hatha', 'Ashtanga', 'Vinyasa', 'Meditation'],
     price: { usd: 3199, inr: 265000, earlyBirdUsd: 2399 },
-    depositUsd: 500,
+    depositUsd: 400,
     startDates: ['Oct 1, 2026', 'Feb 1, 2027'],
     description:
-      'The ultimate immersive training — our 200 and 300 hour programs combined into a single continuous journey. Graduate as an RYT 500 with the depth, practice, and confidence to teach anywhere.',
-    longDescription: [
-      'The 500-Hour comprehensive YTT is our flagship, most-requested program. In 55 uninterrupted days, you move from the foundations of Hatha and Ashtanga Vinyasa into advanced practice, Ayurveda, and yoga therapy — leaving with everything a professional yoga teacher needs.',
-      'Because the course runs as a single arc (rather than two separate modules), you live and breathe the practice without a break, and your transformation deepens accordingly.',
-    ],
+      'Our most complete journey — 200-Hour foundation and 300-Hour deepening combined into a single 60-day immersion. The full RYT-500 path of Hatha and Ashtanga Vinyasa Yoga.',
+    longDescription: commonLong500,
     curriculum: [
-      'Foundational & Advanced Asanas',
-      'Comprehensive Anatomy & Physiology',
-      'Yoga Philosophy Deep-Dive',
-      'Yoga Therapy & Ayurveda',
-      'Supervised Teaching Practicum',
+      '200-Hour foundational curriculum',
+      '300-Hour advanced curriculum',
+      'Ashtanga Primary & Intermediate Series',
+      'Advanced Hatha & pranayama',
+      'Yoga therapy fundamentals',
+      'Teaching methodology — full arc',
     ],
-    inclusions: [
-      '55 nights accommodation',
-      'All sattvic meals',
-      'Complete study resources',
-      'Weekend excursions',
-      'Two Ayurvedic massage sessions',
-      'Yoga Alliance RYT 500 certification',
+    curriculumModules: [
+      {
+        title: 'Foundations (200-Hour)',
+        topics: [
+          'Hatha asanas and the Ashtanga Primary Series',
+          'Pranayama, shatkarma and meditation',
+          'Anatomy, philosophy and ethics',
+        ],
+      },
+      {
+        title: 'Deepening (300-Hour)',
+        topics: [
+          'Ashtanga Intermediate Series',
+          'Advanced Hatha and pranayama',
+          'Yoga therapy and adjustments',
+        ],
+      },
+      {
+        title: 'Yoga Therapy',
+        topics: [
+          'Therapeutic sequencing for common conditions',
+          'Working with stress, anxiety and insomnia',
+          'One-on-one yoga therapy basics',
+        ],
+      },
+      {
+        title: 'Philosophy — Full Arc',
+        topics: [
+          'Patanjali, Hatha Yoga Pradipika and Bhagavad Gita',
+          'History of yoga and lineage study',
+          'Yamas, niyamas and the teacher’s ethics',
+        ],
+      },
+      {
+        title: 'Teaching Practicum',
+        topics: [
+          'Designing and leading multi-week training arcs',
+          'Adjustments — beginner through advanced',
+          'Mentored teaching and final assessment',
+        ],
+      },
     ],
-    teachers: ['t1', 't2', 't3', 't4', 't5'],
-    images: [
-      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=80',
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1400&q=80',
-    ],
-    highlightVideoId: 'Jx6vPvUKWf8',
-    studentVideoIds: ['wX78iKhInsc', 'ScMzIvxBSi4', 'inpok4MKVLM'],
-    certification:
-      'Graduates receive an RYT 500 certificate directly from Yoga Alliance USA — recognised internationally.',
-    paymentLink: 'https://buy.stripe.com/test_500hr_comprehensive',
-    seoTitle: '500 Hour Comprehensive YTT in Rishikesh | Nirvana',
+    inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-500 certification', 'Two-month full-board accommodation']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('flow', 'himalaya', 'group'),
+    gallery: galleryFor('flow', 'himalaya', 'group', 'meditation', 'aarti'),
+    seoTitle: '500 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
     seoDescription:
-      'Master the art of teaching yoga with our 55-day 500 Hour Comprehensive Yoga Teacher Training.',
+      '500 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh India. 60-day Yoga Alliance RYT-500 immersion. The complete teacher’s path. Apply now.',
   },
+
+  // ─────────────────────────────────────────────────────────────
+  // 7. 500-Hour Hatha Kundalini Vinyasa
+  // ─────────────────────────────────────────────────────────────
   {
-    id: 'c7',
-    slug: 'yin-yoga-teacher-training',
-    title: 'Yin Yoga Teacher Training',
+    id: 'c500hkv',
+    slug: '500hr-hatha-kundalini-vinyasa',
+    title: '500-Hour Hatha Kundalini Vinyasa YTT, Rishikesh',
+    category: '500 Hour',
+    format: 'in-person',
+    duration: '60 days',
+    style: ['Hatha', 'Kundalini', 'Vinyasa', 'Meditation'],
+    price: { usd: 3299, inr: 273000, earlyBirdUsd: 2474 },
+    depositUsd: 400,
+    startDates: ['Nov 1, 2026', 'Mar 1, 2027'],
+    description:
+      'A 60-day complete path that weaves Hatha, Kundalini and Vinyasa into a single integrative immersion — RYT-500 certified, with deep mantra sadhana and refined teaching practicum.',
+    longDescription: commonLong500,
+    curriculum: [
+      'Hatha Yoga foundations & advanced practice',
+      'Kundalini kriyas & subtle-body work',
+      'Vinyasa flow methodology',
+      'Mantra sadhana and chanting',
+      'Yoga therapy and adjustments',
+      'Teaching methodology — full arc',
+    ],
+    curriculumModules: [
+      {
+        title: 'Hatha & Vinyasa',
+        topics: [
+          'Traditional Hatha postures and sequencing',
+          'Vinyasa flow methodology and breath-led movement',
+          'Sun salutations and creative sequencing',
+        ],
+      },
+      {
+        title: 'Kundalini & Subtle Body',
+        topics: [
+          'Classical and advanced Kundalini kriyas',
+          'Bandhas, mudras and pranayama for prana awakening',
+          'Chakra meditation and energy ethics',
+        ],
+      },
+      {
+        title: 'Mantra Sadhana',
+        topics: [
+          'Personal mantra practice and japa',
+          'Bija mantras and the chakras',
+          'Daily kirtan and devotional chanting',
+        ],
+      },
+      {
+        title: 'Yoga Therapy & Anatomy',
+        topics: [
+          'Functional anatomy and biomechanics',
+          'Therapeutic sequencing for common conditions',
+          'Adjustments — beginner through advanced',
+        ],
+      },
+      {
+        title: 'Philosophy — Full Arc',
+        topics: [
+          'Patanjali, Hatha Yoga Pradipika and Bhagavad Gita',
+          'Introduction to classical Tantra',
+          'Ethics and the teacher’s role',
+        ],
+      },
+      {
+        title: 'Teaching Practicum',
+        topics: [
+          'Designing and leading multi-week training arcs',
+          'Mentored teaching with peer and faculty feedback',
+          'Final assessment and final practicum',
+        ],
+      },
+    ],
+    inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-500 certification', 'Two-month full-board accommodation', 'Daily kirtan and mantra']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('aarti', 'flow', 'meditation'),
+    gallery: galleryFor('aarti', 'flow', 'meditation', 'candle', 'ganga'),
+    seoTitle: '500 Hour Hatha Kundalini Vinyasa Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoDescription:
+      '500 hour Hatha Kundalini Vinyasa yoga teacher training course in Rishikesh India. 60-day Yoga Alliance RYT-500 immersion. The complete kriya, mantra and asana path.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 8. Yin Yoga TTC (Specialty)
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'cyin',
+    slug: 'yin-yoga-ttc',
+    title: 'Yin Yoga Teacher Training, Rishikesh',
     category: 'Specialty',
     format: 'in-person',
-    duration: '7 days',
+    duration: '14 days',
     style: ['Yin Yoga', 'Meditation'],
     price: { usd: 799, inr: 66000, earlyBirdUsd: 599 },
-    depositUsd: 150,
+    depositUsd: 200,
     startDates: ['Nov 10, 2026', 'Jan 15, 2027'],
     description:
-      'A 50-hour specialty training in Yin Yoga — the slow, meditative practice that targets the deep connective tissues. Learn to hold space for long, quiet shapes that open the body and the mind.',
+      'A two-week training in the slow, contemplative practice of Yin Yoga — long-held floor postures that work the deep fascia and meridians, paired with stillness, breath, and Taoist philosophy.',
     longDescription: [
-      'This 50-hour specialty training gives yoga teachers a complete toolkit for teaching Yin Yoga. You will study meridian theory, functional anatomy, mindful language, and sequencing — and leave with the confidence to lead Yin classes, workshops, or retreats.',
+      'Yin Yoga is the still counterpart to the more active practices of Hatha, Vinyasa and Ashtanga. Postures are held for three to seven minutes, allowing the connective tissues — fascia, ligaments and joints — to slowly release.',
+      'In this 14-day Rishikesh immersion you will learn the Yin tradition as taught by Paul Grilley and Sarah Powers, alongside its roots in Taoist meridian theory and Buddhist mindfulness.',
+      'You will leave with a complete teaching toolkit: how to sequence a Yin class, how to offer mindful adjustments, and how to hold the silent space that Yin teaching requires.',
     ],
     curriculum: [
-      'Principles & Philosophy of Yin',
-      'Meridian Theory & Traditional Chinese Medicine',
-      'Target Areas & Functional Anatomy',
-      'Sequencing Yin Classes',
-      'Meditation & Mindful Language',
+      'Yin Yoga theory & meridian system',
+      'Long-hold postures for the lower body, spine & shoulders',
+      'Mindfulness meditation in stillness',
+      'Sequencing & teaching methodology',
+      'Yin philosophy — Taoist & Buddhist roots',
     ],
-    inclusions: [
-      '7 nights accommodation',
-      'Sattvic meals',
-      'Course manual',
-      'Bolsters and blocks for practice',
-      'Yoga Alliance-aligned 50-hour certificate',
+    curriculumModules: [
+      {
+        title: 'Yin Theory & Meridians',
+        topics: [
+          'The five Yin elements and meridian system',
+          'Working with fascia, ligaments and joints',
+          'Variations of bodies and the Yin approach',
+        ],
+      },
+      {
+        title: 'Yin Postures',
+        topics: [
+          'Lower-body Yin (hips, sacrum, legs)',
+          'Spinal Yin (twists, backbends, forward folds)',
+          'Upper-body Yin (shoulders, heart-space)',
+        ],
+      },
+      {
+        title: 'Stillness & Mindfulness',
+        topics: [
+          'Mindfulness meditation in long-hold practice',
+          'Breath observation and mental noting',
+          'Working with discomfort, sensation and silence',
+        ],
+      },
+      {
+        title: 'Teaching & Sequencing',
+        topics: [
+          'Designing a 60–90 minute Yin class',
+          'Sequencing for the meridians and the seasons',
+          'Cueing, language and the silent teacher',
+        ],
+      },
     ],
-    teachers: ['t3'],
-    images: ['https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=1400&q=80'],
-    highlightVideoId: '4pLUleLdwY4',
-    studentVideoIds: ['wX78iKhInsc', 'ScMzIvxBSi4', 'inpok4MKVLM'],
-    certification: 'Yoga Alliance-aligned 50-hour Yin Yoga certificate eligible for CEU credit.',
-    paymentLink: 'https://buy.stripe.com/test_yin_yoga',
-    seoTitle: 'Yin Yoga Teacher Training in Rishikesh | Nirvana Yoga',
+    inclusions: shortInclusions.concat(['Yin Yoga Teacher Training certification']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('meditation', 'asana', 'sunset'),
+    gallery: galleryFor('meditation', 'asana', 'sunset', 'candle', 'ganga'),
+    seoTitle: 'Yin Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
     seoDescription:
-      'A 50-hour Yin Yoga Teacher Training in Rishikesh. Learn to teach the quiet, meditative side of yoga.',
+      'Yin Yoga teacher training course in Rishikesh India. 14-day specialty training in long-hold postures, meridian theory and mindful stillness on the banks of the Ganga.',
   },
+
+  // ─────────────────────────────────────────────────────────────
+  // 9. Pre-Natal & Post-Natal Yoga TTC (Specialty)
+  // ─────────────────────────────────────────────────────────────
   {
-    id: 'c8',
+    id: 'cprenatal',
+    slug: 'prenatal-postnatal-ttc',
+    title: 'Pre-Natal & Post-Natal Yoga Teacher Training, Rishikesh',
+    category: 'Specialty',
+    format: 'in-person',
+    duration: '14 days',
+    style: ['Hatha', 'Yoga Therapy', 'Meditation'],
+    price: { usd: 899, inr: 74000, earlyBirdUsd: 674 },
+    depositUsd: 200,
+    startDates: ['Nov 15, 2026', 'Feb 15, 2027'],
+    description:
+      'A 14-day specialty training that prepares you to teach yoga safely and beautifully through every trimester of pregnancy and the first year postpartum.',
+    longDescription: [
+      'Pregnancy and the early postpartum window ask much of a body, a mind, and a heart. Yoga, taught skilfully, can be one of the kindest companions through this passage.',
+      'In this 14-day Rishikesh immersion you will study trimester-by-trimester sequencing, contraindicated postures, breath practices for labour and recovery, and the emotional landscape of motherhood.',
+      'You will leave equipped to teach group pre-natal classes, lead one-on-one sessions, and support new mothers in the often-overlooked fourth trimester.',
+    ],
+    curriculum: [
+      'Anatomy & physiology of pregnancy',
+      'Trimester-by-trimester sequencing',
+      'Contraindicated postures & safe modifications',
+      'Pranayama & meditation for labour',
+      'Post-natal recovery & pelvic floor work',
+      'Teaching methodology for pregnant students',
+    ],
+    curriculumModules: [
+      {
+        title: 'Pregnancy Anatomy',
+        topics: [
+          'The trimesters — what changes in body and mind',
+          'Pelvic floor, diaphragm and the breath',
+          'Common discomforts and how yoga can help',
+        ],
+      },
+      {
+        title: 'Pre-Natal Asana',
+        topics: [
+          'Safe asana for each trimester',
+          'Contraindicated postures and modifications',
+          'Use of props for support and ease',
+        ],
+      },
+      {
+        title: 'Pranayama & Meditation',
+        topics: [
+          'Breath practices for pregnancy and labour',
+          'Yoga nidra and guided relaxation',
+          'Mindfulness for the wandering mind of motherhood',
+        ],
+      },
+      {
+        title: 'Post-Natal Recovery',
+        topics: [
+          'Diastasis recti and core rebuilding',
+          'Pelvic floor recovery',
+          'Yoga with a baby — gentle return to practice',
+        ],
+      },
+      {
+        title: 'Teaching Methodology',
+        topics: [
+          'Sequencing for mixed-trimester classes',
+          'One-on-one pre-natal sessions',
+          'Holding space for the emotional journey',
+        ],
+      },
+    ],
+    inclusions: shortInclusions.concat(['Pre-Natal & Post-Natal Yoga Teacher Training certification']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('asana', 'meditation', 'group'),
+    gallery: galleryFor('asana', 'meditation', 'group', 'sunset', 'ganga'),
+    seoTitle: 'Pre Natal Post Natal Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoDescription:
+      'Pre-natal and post-natal yoga teacher training course in Rishikesh India. 14-day specialty training in trimester-safe sequencing, breathwork for labour and post-natal recovery.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 10. Sound Healing Course (Specialty)
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'csound',
     slug: 'sound-healing-course',
-    title: 'Sound Healing Course',
+    title: 'Sound Healing Course, Rishikesh',
+    category: 'Specialty',
+    format: 'in-person',
+    duration: '10 days',
+    style: ['Sound Healing', 'Meditation'],
+    price: { usd: 699, inr: 58000, earlyBirdUsd: 524 },
+    depositUsd: 200,
+    startDates: ['Oct 20, 2026', 'Dec 10, 2026', 'Feb 20, 2027'],
+    description:
+      'A 10-day immersion in the healing power of sound — Tibetan & crystal singing bowls, gongs, tuning forks, mantra and the science of vibrational therapy.',
+    longDescription: [
+      'Sound is one of the oldest healing tools known to humankind. From the bija mantras of the Vedas to the singing bowls of the Himalayas, sound has been used for millennia to quiet the mind and open the heart.',
+      'In this 10-day Rishikesh immersion you will learn to play and teach with Tibetan and crystal singing bowls, gongs, tuning forks and the human voice.',
+      'You will study the principles of vibrational therapy, the chakras and sound, and how to design and lead a complete sound bath session.',
+    ],
+    curriculum: [
+      'Foundations of sound healing',
+      'Tibetan & crystal singing bowls',
+      'Gongs, tuning forks and chimes',
+      'Mantra & vocal sound healing',
+      'Designing & leading a sound bath',
+    ],
+    curriculumModules: [
+      {
+        title: 'Sound Healing Foundations',
+        topics: [
+          'History and traditions of sound healing',
+          'Vibration, frequency and the human body',
+          'Chakras, nadis and sound',
+        ],
+      },
+      {
+        title: 'Singing Bowls',
+        topics: [
+          'Tibetan singing bowls — playing techniques',
+          'Crystal singing bowls and the chakras',
+          'Working with the body and the bowls',
+        ],
+      },
+      {
+        title: 'Gongs & Tuning Forks',
+        topics: [
+          'Gong technique and safety',
+          'Tuning forks for the body and the field',
+          'Chimes, bells and accent instruments',
+        ],
+      },
+      {
+        title: 'Voice & Mantra',
+        topics: [
+          'Bija mantras and the chakras',
+          'Vocal toning and humming',
+          'Leading group chant',
+        ],
+      },
+      {
+        title: 'Designing a Session',
+        topics: [
+          'Structuring a 60–90 minute sound bath',
+          'Working one-on-one and with groups',
+          'Holding space for emotional release',
+        ],
+      },
+    ],
+    inclusions: shortInclusions.concat(['Sound Healing Practitioner certification']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('candle', 'meditation', 'aarti'),
+    gallery: galleryFor('candle', 'meditation', 'aarti', 'yogi', 'sunset'),
+    seoTitle: 'Sound Healing Course in Rishikesh India | Nirvana Yoga School',
+    seoDescription:
+      'Sound healing course in Rishikesh India. 10-day immersion in Tibetan and crystal singing bowls, gongs, tuning forks, mantra and the design of full sound-bath sessions.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 11. Aerial Yoga TTC (Specialty)
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'caerial',
+    slug: 'aerial-yoga-ttc',
+    title: 'Aerial Yoga Teacher Training, Rishikesh',
+    category: 'Specialty',
+    format: 'in-person',
+    duration: '14 days',
+    style: ['Hatha', 'Vinyasa'],
+    price: { usd: 899, inr: 74000, earlyBirdUsd: 674 },
+    depositUsd: 200,
+    startDates: ['Nov 20, 2026', 'Feb 5, 2027'],
+    description:
+      'A 14-day Aerial Yoga teacher training — silk hammocks, inversion therapy, anti-gravity sequencing and a playful, creative path back to the breath.',
+    longDescription: [
+      'Aerial Yoga uses a soft silk hammock to support and challenge the body in equal measure. It allows for safe inversions, gentle decompression of the spine, and a quality of weightless ease that seated practice cannot offer.',
+      'In this 14-day Rishikesh immersion you will study aerial-specific anatomy, hammock setup and safety, sequencing for beginners and advanced students, and the art of joyful, creative teaching.',
+      'You will leave certified to teach aerial yoga in studios worldwide, with a full toolkit of postures, transitions and class plans.',
+    ],
+    curriculum: [
+      'Aerial yoga foundations & safety',
+      'Hammock setup and rigging basics',
+      'Aerial-specific anatomy',
+      'Inversions and decompression',
+      'Sequencing for all levels',
+      'Teaching methodology — aerial',
+    ],
+    curriculumModules: [
+      {
+        title: 'Foundations & Safety',
+        topics: [
+          'History and styles of aerial yoga',
+          'Hammock setup, rigging and weight ratings',
+          'Contraindications and safe practice',
+        ],
+      },
+      {
+        title: 'Aerial Asana',
+        topics: [
+          'Standing and seated aerial postures',
+          'Aerial sun salutations',
+          'Inversions and decompression',
+        ],
+      },
+      {
+        title: 'Anatomy & Adjustments',
+        topics: [
+          'Aerial-specific anatomy — shoulders, spine, pelvis',
+          'Modifications for different bodies',
+          'Hands-on adjustments in the hammock',
+        ],
+      },
+      {
+        title: 'Sequencing',
+        topics: [
+          'Beginner aerial flow',
+          'Restorative aerial sequences',
+          'Creative and playful aerial classes',
+        ],
+      },
+      {
+        title: 'Teaching Practicum',
+        topics: [
+          'Cueing and language in aerial',
+          'Class management and student care',
+          'Mentored teaching and final practicum',
+        ],
+      },
+    ],
+    inclusions: shortInclusions.concat(['Aerial Yoga Teacher Training certification', 'Aerial hammock for the duration of the course']),
+    teachers: ALL_TEACHERS,
+    images: galleryFor('flow', 'asana', 'group'),
+    gallery: galleryFor('flow', 'asana', 'group', 'sunset', 'ganga'),
+    seoTitle: 'Aerial Yoga Teacher Training Course in Rishikesh | Nirvana Yoga School',
+    seoDescription:
+      'Aerial yoga teacher training course in Rishikesh. 14-day specialty training in hammock-based asana, safe inversions and creative aerial sequencing. Reserve your seat.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 12. Short Meditation Course (Specialty)
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'cmed',
+    slug: 'meditation-course',
+    title: 'Short Meditation Course, Rishikesh',
     category: 'Specialty',
     format: 'in-person',
     duration: '7 days',
-    style: ['Sound Healing', 'Meditation'],
-    price: { usd: 699, inr: 58000, earlyBirdUsd: 524 },
-    depositUsd: 150,
-    startDates: ['Oct 20, 2026', 'Dec 10, 2026'],
-    description:
-      'A one-week immersion into the healing power of sound. Work with Himalayan singing bowls, mantras, and tuning forks to guide yourself and others into deep states of rest and repair.',
-    longDescription: [
-      'This 7-day sound-healing immersion is a working course — you will learn by doing. Daily theory sessions are followed by bowl practice, mantra practice, and client-facing sound baths. By the end of the week you will be able to build and deliver a full session.',
-    ],
-    curriculum: [
-      'Introduction to Sound Therapy',
-      'Himalayan & Crystal Bowls',
-      'Mantra, Bija Sounds & Voice',
-      'Tuning Forks & Vibrational Healing',
-      'Building & Delivering a Sound Bath',
-    ],
-    inclusions: [
-      '7 nights accommodation',
-      'Sattvic meals',
-      'Practice set of bowls during the course',
-      'Completion certificate',
-    ],
-    teachers: ['t4'],
-    images: ['https://images.unsplash.com/photo-1591291621164-2c6367723315?w=1400&q=80'],
-    highlightVideoId: 'LqXZ628YNj4',
-    studentVideoIds: ['wX78iKhInsc', 'ScMzIvxBSi4', 'inpok4MKVLM'],
-    certification: 'Nirvana Yoga School Sound Healing completion certificate.',
-    paymentLink: 'https://buy.stripe.com/test_sound_healing',
-    seoTitle: 'Sound Healing Course in Rishikesh | Nirvana Yoga School',
-    seoDescription:
-      'A 7-day Sound Healing course in Rishikesh — bowls, mantra, and vibrational therapy.',
-  },
-  {
-    id: 'c9',
-    slug: 'online-200hr-ytt',
-    title: 'Online 200-Hour Yoga Teacher Training',
-    category: 'Online',
-    format: 'online',
-    duration: '12 weeks',
-    style: ['Hatha', 'Ashtanga', 'Vinyasa'],
-    price: { usd: 699, inr: 58000, earlyBirdUsd: 524 },
+    style: ['Meditation'],
+    price: { usd: 399, inr: 33000, earlyBirdUsd: 299 },
     depositUsd: 100,
-    startDates: ['Rolling enrolment'],
+    startDates: ['Oct 25, 2026', 'Nov 25, 2026', 'Dec 25, 2026'],
     description:
-      'Train with our Rishikesh faculty from anywhere in the world. Live classes, recorded modules, and personal mentoring take you from student to certified teacher over 12 weeks.',
+      'A 7-day silent retreat-style introduction to traditional meditation — trataka, mantra japa, vipassana, and the quiet, steady gaze inward that is the heart of yoga.',
     longDescription: [
-      'Our Online 200-Hour YTT brings the Nirvana ashram to your home. You will join live Zoom asana and pranayama classes, study philosophy and anatomy through a structured video library, and receive weekly 1:1 mentoring from a senior teacher.',
-      'The course is recognised by Yoga Alliance USA as an RYT 200 and is ideal for students who want the credential but cannot travel to India for a full month.',
+      'Yoga, in the end, is meditation. The asana and the breathwork are preparation; the steady, quiet gaze inward is the practice itself.',
+      'This 7-day course in Rishikesh distils the meditation traditions of India — trataka, mantra japa, vipassana and self-inquiry — into a structured immersion suitable for both new and experienced practitioners.',
+      'Days are spent in alternating cycles of sitting, walking, gentle Hatha, and noble silence. You will leave with a meditation practice you can sustain for the rest of your life.',
     ],
     curriculum: [
-      'Live Asana & Pranayama Classes (Zoom)',
-      'Recorded Philosophy & Anatomy Modules',
-      'Teaching Practice with Feedback',
-      '1:1 Mentoring Sessions',
-      'Final Assessment & Video Submission',
+      'Foundations of meditation',
+      'Trataka (candle gazing)',
+      'Mantra japa with the mala',
+      'Vipassana (insight meditation)',
+      'Self-inquiry and silent sitting',
     ],
-    inclusions: [
-      'Live + recorded lifetime access',
-      'Digital course manuals',
-      'Weekly mentor calls',
-      'Yoga Alliance RYT 200 certification',
+    curriculumModules: [
+      {
+        title: 'Foundations',
+        topics: [
+          'Posture, breath and the meditative seat',
+          'Working with the wandering mind',
+          'Setting up a daily home practice',
+        ],
+      },
+      {
+        title: 'Concentration Practices',
+        topics: [
+          'Trataka — candle and yantra gazing',
+          'Mantra japa with mala beads',
+          'Breath-focused dharana',
+        ],
+      },
+      {
+        title: 'Insight Practices',
+        topics: [
+          'Vipassana — body scan and noting',
+          'Mindfulness in walking and eating',
+          'Working with thought and emotion',
+        ],
+      },
+      {
+        title: 'Self-Inquiry',
+        topics: [
+          '"Who am I?" — the inquiry of Ramana Maharshi',
+          'Silent sitting and resting in awareness',
+          'Integration into daily life',
+        ],
+      },
     ],
+    inclusions: shortInclusions.concat(['Meditation Course completion certificate', 'Mala beads for daily practice']),
     teachers: ['t1', 't2'],
-    images: ['https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1400&q=80'],
-    highlightVideoId: 'wX78iKhInsc',
-    studentVideoIds: ['wX78iKhInsc', 'ScMzIvxBSi4', 'inpok4MKVLM'],
-    certification: 'Yoga Alliance USA RYT 200, delivered online.',
-    paymentLink: 'https://buy.stripe.com/test_online_200hr',
-    seoTitle: 'Online 200 Hour Yoga Teacher Training | Nirvana Yoga',
+    images: galleryFor('meditation', 'candle', 'sunset'),
+    gallery: galleryFor('meditation', 'candle', 'sunset', 'aarti', 'ganga'),
+    seoTitle: 'Short Meditation Course in Rishikesh India | Nirvana Yoga School',
     seoDescription:
-      'Train online with Rishikesh faculty. 12-week 200 Hour Yoga Teacher Training, Yoga Alliance certified.',
-  },
-  {
-    id: 'c10',
-    slug: 'online-meditation-course',
-    title: 'Online Meditation & Mindfulness Course',
-    category: 'Online',
-    format: 'online',
-    duration: '4 weeks',
-    style: ['Meditation', 'Yoga Nidra'],
-    price: { usd: 199, inr: 16500, earlyBirdUsd: 149 },
-    depositUsd: 50,
-    startDates: ['Rolling enrolment'],
-    description:
-      'A 4-week online course in meditation and mindfulness, drawing on classical Himalayan techniques. Ideal for practitioners and teachers wanting to deepen their sitting practice.',
-    longDescription: [
-      'Over four weeks of live sessions and guided practice, you will build a sustainable daily meditation practice rooted in classical Himalayan techniques. All live sessions are recorded and available for lifetime replay.',
-    ],
-    curriculum: [
-      'Foundations of Meditation',
-      'Yoga Nidra & Deep Rest',
-      'Mantra & Japa',
-      'Integrating Mindfulness into Daily Life',
-    ],
-    inclusions: [
-      'Live + recorded sessions',
-      'Guided audio library',
-      'PDF workbook',
-      'Completion certificate',
-    ],
-    teachers: ['t3'],
-    images: ['https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80'],
-    highlightVideoId: 'inpok4MKVLM',
-    studentVideoIds: ['wX78iKhInsc', 'ScMzIvxBSi4', 'inpok4MKVLM'],
-    certification: 'Nirvana Yoga School certificate of completion.',
-    paymentLink: 'https://buy.stripe.com/test_online_meditation',
-    seoTitle: 'Online Meditation & Mindfulness Course | Nirvana Yoga',
-    seoDescription:
-      'A 4-week online meditation and mindfulness course grounded in classical Himalayan techniques.',
+      'Short meditation course in Rishikesh India. 7-day silent immersion in trataka, mantra, vipassana and self-inquiry. A foundation for a lifelong meditation practice.',
   },
 ];

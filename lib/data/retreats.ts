@@ -17,7 +17,7 @@ export const retreats: Retreat[] = [
       '06:00 PM - Evening Meditation',
       '07:30 PM - Dinner'
     ],
-    images: ['https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80']
+    images: ['https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80']
   },
   {
     id: 'r2',
@@ -35,7 +35,7 @@ export const retreats: Retreat[] = [
       '06:00 PM - Sound Healing',
       '07:30 PM - Dinner'
     ],
-    images: ['https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=800&q=80']
+    images: ['https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1200&q=80']
   },
   {
     id: 'r3',
@@ -53,6 +53,6 @@ export const retreats: Retreat[] = [
       '06:30 PM - Kirtan / Aarti',
       '08:00 PM - Dinner'
     ],
-    images: ['https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80']
+    images: ['https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=1200&q=80']
   }
 ];

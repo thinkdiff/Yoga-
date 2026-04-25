@@ -24,12 +24,14 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
 
-        ivory: '#F9F5EE',
-        sage: '#2C4A3E',
-        terracotta: '#C4714A',
-        gold: '#C9A84C',
-        'gold-light': '#E8D5A3',
-        charcoal: '#2D2D2D',
+        ivory: '#FBF6F0',
+        sage: '#7C444F',
+        'sage-deep': '#5E2F38',
+        terracotta: '#E16A54',
+        'rose-clay': '#9F5255',
+        gold: '#F39E60',
+        'gold-light': '#FBE4CF',
+        charcoal: '#3A2A2D',
 
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -61,9 +63,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['var(--font-cormorant)', 'serif'],
-        body: ['var(--font-dm-sans)', 'sans-serif'],
-        accent: ['var(--font-playfair)', 'serif'],
+        display: ['var(--font-quicksand)', 'ui-sans-serif', 'sans-serif'],
+        body: ['var(--font-quicksand)', 'ui-sans-serif', 'sans-serif'],
+        accent: ['var(--font-quicksand)', 'ui-sans-serif', 'sans-serif'],
+        sans: ['var(--font-quicksand)', 'ui-sans-serif', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

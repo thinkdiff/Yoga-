@@ -5,14 +5,23 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Menu, X, ChevronDown, Flower2 } from 'lucide-react';
-import MegaMenu from './MegaMenu';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import Logo from '@/components/shared/Logo';
+import { courses } from '@/lib/data/courses';
+
+const yttCourses = courses.filter((c) =>
+  ['200 Hour', '300 Hour', '500 Hour'].includes(c.category) ||
+  c.slug.startsWith('100hr-')
+);
+const shortCourses = courses.filter(
+  (c) => c.category === 'Specialty' && !c.slug.startsWith('100hr-')
+);
 
 const navLinks = [
-  { name: 'Courses', href: '/courses', isMega: true },
-  { name: 'Workshops', href: '/workshops' },
-  { name: 'Retreats', href: '/retreats' },
+  { name: 'Courses', href: '/courses', dropdown: true },
   { name: 'Teachers', href: '/teachers' },
+  { name: 'Retreats', href: '/retreats' },
+  { name: 'Gallery', href: '/gallery' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -20,7 +29,8 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [coursesOpen, setCoursesOpen] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
   const pathname = usePathname();
   const isHomepage = pathname === '/';
 
@@ -38,46 +48,27 @@ export default function Navbar() {
         'fixed top-0 w-full z-50 transition-all duration-500 ease-in-out',
         solid ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
       )}
-      onMouseLeave={() => setIsMegaMenuOpen(false)}
+      onMouseLeave={() => setCoursesOpen(false)}
     >
       <div className="container mx-auto px-6 h-[68px] flex items-center justify-between gap-6">
 
-        {/* ── Logo ── */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
-          <div className={cn(
-            'p-1.5 rounded-lg transition-all duration-300 group-hover:rotate-12',
-            solid ? 'bg-terracotta/10 text-terracotta' : 'bg-white/20 text-white'
-          )}>
-            <Flower2 className="w-6 h-6" />
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className={cn(
-              'font-display text-lg font-bold tracking-tight',
-              solid ? 'text-sage' : 'text-white'
-            )}>
-              Nirvana Yoga
-            </span>
-            <span className={cn(
-              'text-[9px] uppercase tracking-[0.18em] font-semibold',
-              solid ? 'text-sage/50' : 'text-white/60'
-            )}>
-              School · Rishikesh
-            </span>
-          </div>
+        {/* Logo */}
+        <Link href="/">
+          <Logo variant={solid ? 'dark' : 'light'} />
         </Link>
 
-        {/* ── Desktop Nav ── */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
           {navLinks.map((link) => (
             <div
               key={link.name}
               className="relative flex items-center"
-              onMouseEnter={() => link.isMega ? setIsMegaMenuOpen(true) : setIsMegaMenuOpen(false)}
+              onMouseEnter={() => setCoursesOpen(!!link.dropdown)}
             >
               <Link
                 href={link.href}
                 className={cn(
-                  'px-3.5 py-2 text-[11px] font-semibold tracking-[0.08em] uppercase flex items-center gap-1 rounded-md transition-all duration-200 relative',
+                  'px-3.5 py-2 text-[11px] font-semibold tracking-[0.08em] uppercase flex items-center gap-1 rounded-md transition-all duration-200',
                   pathname === link.href
                     ? solid ? 'text-terracotta' : 'text-gold'
                     : solid
@@ -86,10 +77,10 @@ export default function Navbar() {
                 )}
               >
                 {link.name}
-                {link.isMega && (
+                {link.dropdown && (
                   <ChevronDown className={cn(
                     'w-3.5 h-3.5 transition-transform duration-200',
-                    isMegaMenuOpen && 'rotate-180'
+                    coursesOpen && 'rotate-180'
                   )} />
                 )}
               </Link>
@@ -97,10 +88,10 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* ── Desktop CTA ── */}
+        {/* Desktop CTA */}
         <div className="hidden lg:flex items-center shrink-0">
           <Link
-            href="/contact"
+            href="/contact#calendly"
             className={cn(
               'px-5 py-2 text-[11px] font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:scale-105 active:scale-95',
               solid
@@ -108,11 +99,11 @@ export default function Navbar() {
                 : 'bg-white text-sage hover:bg-gold hover:text-white shadow-md'
             )}
           >
-            Enrol Now
+            Enquiry Now
           </Link>
         </div>
 
-        {/* ── Mobile Toggle ── */}
+        {/* Mobile Toggle */}
         <button
           className="lg:hidden z-50 relative p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -126,20 +117,72 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* ── Mega Menu ── */}
+      {/* Courses Dropdown (Desktop) */}
       <AnimatePresence>
-        {isMegaMenuOpen && (
-          <div
-            className="hidden lg:block absolute w-full"
-            onMouseEnter={() => setIsMegaMenuOpen(true)}
-            onMouseLeave={() => setIsMegaMenuOpen(false)}
+        {coursesOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+            className="hidden lg:block absolute left-0 right-0 top-[68px]"
+            onMouseEnter={() => setCoursesOpen(true)}
+            onMouseLeave={() => setCoursesOpen(false)}
           >
-            <MegaMenu />
-          </div>
+            <div className="container mx-auto px-6">
+              <div className="bg-white rounded-2xl shadow-xl border border-sage/10 overflow-hidden grid md:grid-cols-2">
+                <div className="p-7 border-b md:border-b-0 md:border-r border-sage/10">
+                  <h3 className="text-[10px] font-bold uppercase tracking-[0.18em] text-terracotta mb-4">
+                    Yoga Teacher Training
+                  </h3>
+                  <ul className="space-y-1.5">
+                    {yttCourses.map((c) => (
+                      <li key={c.slug}>
+                        <Link
+                          href={`/courses/${c.slug}`}
+                          onClick={() => setCoursesOpen(false)}
+                          className="block px-3 py-2 rounded-lg text-sm text-sage hover:bg-terracotta/5 hover:text-terracotta transition-colors"
+                        >
+                          {c.title.replace(', Rishikesh', '')}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="p-7">
+                  <h3 className="text-[10px] font-bold uppercase tracking-[0.18em] text-terracotta mb-4">
+                    Short & Specialty Courses
+                  </h3>
+                  <ul className="space-y-1.5">
+                    {shortCourses.map((c) => (
+                      <li key={c.slug}>
+                        <Link
+                          href={`/courses/${c.slug}`}
+                          onClick={() => setCoursesOpen(false)}
+                          className="block px-3 py-2 rounded-lg text-sm text-sage hover:bg-terracotta/5 hover:text-terracotta transition-colors"
+                        >
+                          {c.title.replace(', Rishikesh', '')}
+                        </Link>
+                      </li>
+                    ))}
+                    <li className="pt-3 mt-3 border-t border-sage/10">
+                      <Link
+                        href="/courses"
+                        onClick={() => setCoursesOpen(false)}
+                        className="block px-3 py-2 rounded-lg text-sm font-semibold text-terracotta hover:bg-terracotta/5 transition-colors"
+                      >
+                        View all courses →
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
 
-      {/* ── Mobile Overlay ── */}
+      {/* Mobile Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -150,28 +193,89 @@ export default function Navbar() {
             className="fixed inset-0 bg-sage z-40 lg:hidden flex flex-col pt-28 pb-12 px-8 overflow-y-auto"
           >
             <div className="flex flex-col gap-1 mb-10">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    'font-display text-3xl font-bold py-3 border-b border-white/10 flex items-center justify-between',
-                    pathname === link.href ? 'text-gold' : 'text-ivory'
-                  )}
-                >
-                  {link.name}
-                  <ChevronDown className="w-5 h-5 opacity-40" />
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.dropdown ? (
+                  <div key={link.name} className="border-b border-white/10">
+                    <button
+                      onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
+                      className="w-full font-display text-3xl font-bold py-3 flex items-center justify-between text-ivory"
+                    >
+                      {link.name}
+                      <ChevronDown className={cn(
+                        'w-5 h-5 transition-transform',
+                        mobileCoursesOpen && 'rotate-180'
+                      )} />
+                    </button>
+                    <AnimatePresence>
+                      {mobileCoursesOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="overflow-hidden"
+                        >
+                          <ul className="pb-4 pl-1 space-y-1">
+                            <li className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold pt-2 pb-1">
+                              Yoga Teacher Training
+                            </li>
+                            {yttCourses.map((c) => (
+                              <li key={c.slug}>
+                                <Link
+                                  href={`/courses/${c.slug}`}
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setMobileCoursesOpen(false);
+                                  }}
+                                  className="block py-2 text-sm text-ivory/80 hover:text-gold"
+                                >
+                                  {c.title.replace(', Rishikesh', '')}
+                                </Link>
+                              </li>
+                            ))}
+                            <li className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold pt-3 pb-1">
+                              Short & Specialty
+                            </li>
+                            {shortCourses.map((c) => (
+                              <li key={c.slug}>
+                                <Link
+                                  href={`/courses/${c.slug}`}
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setMobileCoursesOpen(false);
+                                  }}
+                                  className="block py-2 text-sm text-ivory/80 hover:text-gold"
+                                >
+                                  {c.title.replace(', Rishikesh', '')}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={cn(
+                      'font-display text-3xl font-bold py-3 border-b border-white/10 flex items-center justify-between',
+                      pathname === link.href ? 'text-gold' : 'text-ivory'
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
             </div>
             <div className="mt-auto">
               <Link
-                href="/contact"
+                href="/contact#calendly"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block w-full text-center bg-white text-sage font-bold uppercase tracking-widest text-base py-4 rounded-full hover:bg-gold hover:text-white transition-colors"
               >
-                Enrol Now
+                Enquiry Now
               </Link>
             </div>
           </motion.div>

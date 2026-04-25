@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    --background: 40 40% 96%; /* #F9F5EE ivory approx */
-    --foreground: 0 0% 18%; /* charcoal var */
+    --background: 33 45% 96%; /* #FBF6F0 warm cream */
+    --foreground: 350 16% 20%; /* #3A2A2D warmed charcoal */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 18%;
+    --card-foreground: 350 16% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 18%;
+    --popover-foreground: 350 16% 20%;
 
-    --primary: 20 53% 53%; /* #C4714A terracotta approx */
+    --primary: 351 30% 38%; /* #7C444F deep maroon */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 155 25% 23%; /* #2C4A3E sage approx */
+    --secondary: 357 32% 47%; /* #9F5255 rose-clay */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 20% 90%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 30 35% 92%;
+    --muted-foreground: 350 12% 38%;
 
-    --accent: 45 54% 54%; /* #C9A84C gold approx */
-    --accent-foreground: 20 50% 20%;
+    --accent: 18 86% 67%; /* #F39E60 peach */
+    --accent-foreground: 351 30% 25%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 20 53% 53%;
+    --border: 30 30% 88%;
+    --input: 30 30% 88%;
+    --ring: 9 70% 60%; /* #E16A54 terracotta focus */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 

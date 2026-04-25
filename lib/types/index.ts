@@ -81,6 +81,10 @@ export interface Teacher {
   specializations: CourseStyle[];
   certifications: string[];
   yearsExp: string;
+  introduction?: string;
+  education?: string[];
+  experience?: string[];
+  expertise?: string[];
 }
 
 export interface Testimonial {

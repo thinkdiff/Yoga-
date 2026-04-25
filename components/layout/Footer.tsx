@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { Flower2, Phone, Mail } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 import { FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
 import { courses } from '@/lib/data/courses';
 import { contactInfo } from '@/lib/data/contact';
 import PaymentMethods from '@/components/sections/PaymentMethods';
+import Logo from '@/components/shared/Logo';
 
 export default function Footer() {
   const waHref = `https://wa.me/${contactInfo.phoneDigits}?text=${encodeURIComponent(contactInfo.whatsappDefaultMessage)}`;
@@ -14,11 +15,8 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <Flower2 className="w-8 h-8 text-gold" />
-              <span className="font-display text-2xl font-semibold text-white tracking-wide">
-                Nirvana Yoga
-              </span>
+            <Link href="/" className="inline-block mb-6">
+              <Logo variant="light" />
             </Link>
             <p className="mb-6 font-body text-sm leading-relaxed">
               A Sanctuary for the Soul in Rishikesh, India. Authentic Yoga Alliance USA Certified Teacher Training programs.
@@ -98,7 +96,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-          <p>&copy; {new Date().getFullYear()} Nirvana Yoga School. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} House of Yogis. All rights reserved.</p>
           <div className="flex bg-white/5 rounded-full px-4 py-1 gap-2 items-center">
             <span className="text-gold font-semibold">Yoga Alliance</span>
             <span className="text-white/40">|</span>

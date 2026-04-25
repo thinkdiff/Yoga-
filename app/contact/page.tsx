@@ -11,6 +11,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { contactInfo } from '@/lib/data/contact';
+import { courses } from '@/lib/data/courses';
+import { InlineWidget } from 'react-calendly';
 
 const contactSchema = z.object({
   fullName: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -39,9 +42,12 @@ export default function ContactPage() {
   });
 
   function onSubmit(values: z.infer<typeof contactSchema>) {
-    console.log(values);
-    toast.success('Message Sent Successfully', {
-      description: "We've received your inquiry and will get back to you within 24 hours.",
+    const text = `Hi House of Yogis! I'd like to inquire about a course.\n\nName: ${values.fullName}\nEmail: ${values.email}\nPhone: ${values.phone}\nCountry: ${values.country}\nCourse: ${values.course}\nMessage: ${values.message}`;
+    const url = `https://wa.me/${contactInfo.phoneDigits}?text=${encodeURIComponent(text)}`;
+    window.location.href = url;
+    
+    toast.success('Inquiry Sent to WhatsApp', {
+      description: "We've redirected you to WhatsApp to complete your message.",
     });
     reset();
   }
@@ -92,10 +98,9 @@ export default function ContactPage() {
                     <Select onValueChange={field.onChange} value={field.value}>
                       <SelectTrigger><SelectValue placeholder="Select a course" /></SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="200-hatha">200 Hr Hatha Ashtanga</SelectItem>
-                        <SelectItem value="200-ayurveda">200 Hr Ayurveda</SelectItem>
-                        <SelectItem value="300-advanced">300 Hr Advanced</SelectItem>
-                        <SelectItem value="retreat">Yoga Retreat</SelectItem>
+                        {courses.map(c => (
+                          <SelectItem key={c.slug} value={c.slug}>{c.title}</SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   )}
@@ -120,7 +125,7 @@ export default function ContactPage() {
             <h3 className="font-display text-3xl mb-8">Get in Touch</h3>
             
             <div className="space-y-6 flex-grow">
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <MapPin className="w-6 h-6 text-gold mr-4 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-lg font-display mb-1">Our Location</h4>
@@ -132,19 +137,19 @@ export default function ContactPage() {
                 </div>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <Phone className="w-6 h-6 text-gold mr-4 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-lg font-display mb-1">Phone / WhatsApp</h4>
-                  <p className="text-white/80 text-sm">+91 98765 43210</p>
+                  <p className="text-white/80 text-sm">{contactInfo.phone}</p>
                 </div>
               </div>
 
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <Mail className="w-6 h-6 text-gold mr-4 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-lg font-display mb-1">Email</h4>
-                  <p className="text-white/80 text-sm">namaste@nirvanayoga.edu</p>
+                  <p className="text-white/80 text-sm">{contactInfo.email}</p>
                 </div>
               </div>
             </div>
@@ -163,13 +168,22 @@ export default function ContactPage() {
             </div>
 
             <Button className="mt-6 w-full bg-[#25D366] hover:bg-[#128C7E] text-white" asChild>
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+              <a href={`https://wa.me/${contactInfo.phoneDigits}`} target="_blank" rel="noopener noreferrer">
                 <MessageSquare className="w-4 h-4 mr-2" /> Chat on WhatsApp
               </a>
             </Button>
           </div>
 
         </div>
+
+        {/* Calendly Section */}
+        <div id="calendly" className="mt-24 scroll-mt-32">
+          <SectionHeader title="Book a Meeting" subtitle="Schedule a 1-on-1 discovery call with our admissions team." />
+          <div className="mt-8 bg-white p-4 md:p-8 rounded-2xl shadow-sm border border-border h-[700px] overflow-hidden">
+            <InlineWidget url="https://calendly.com/houseofyogis" styles={{ height: '100%' }} />
+          </div>
+        </div>
+
       </div>
     </div>
   );

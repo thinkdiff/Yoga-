@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
@@ -27,6 +28,7 @@ function useCountdown(deadlineIso: string) {
 
 export default function PromoPopup() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const countdown = useCountdown(promo.deadline);
 
   const deadlineLabel = useMemo(() => {
@@ -55,7 +57,7 @@ export default function PromoPopup() {
       window.clearTimeout(timer);
       window.removeEventListener('scroll', onScroll);
     };
-  }, [countdown.expired]);
+  }, [countdown.expired, pathname]);
 
   const handleOpenChange = (next: boolean) => {
     setOpen(next);

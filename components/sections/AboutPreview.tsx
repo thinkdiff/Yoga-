@@ -67,17 +67,17 @@ export default function AboutPreview() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="absolute top-0 right-0 w-[80%] h-[75%] rounded-2xl overflow-hidden shadow-xl z-20">
-              <Image 
-                src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800&q=80"
-                alt="Meditation Class"
+              <Image
+                src="https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=1200&q=80"
+                alt="Ganga aarti at Parmarth Niketan, Rishikesh"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="absolute bottom-0 left-0 w-[65%] h-[55%] rounded-2xl overflow-hidden shadow-2xl z-30 border-8 border-ivory">
-              <Image 
-                src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=800&q=80"
-                alt="Yoga Outdoors"
+              <Image
+                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80"
+                alt="Sunrise yoga on the banks of the Ganga"
                 fill
                 className="object-cover"
               />

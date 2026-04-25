@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, DM_Sans, Playfair_Display } from 'next/font/google';
+import { Quicksand } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
 import Navbar from '@/components/layout/Navbar';
@@ -9,31 +9,20 @@ import PromoPopup from '@/components/shared/PromoPopup';
 import WhatsAppFloat from '@/components/shared/WhatsAppFloat';
 import ElevenLabsAgent from '@/components/shared/ElevenLabsAgent';
 
-const cormorant = Cormorant_Garamond({
+const quicksand = Quicksand({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-cormorant',
-  display: 'swap',
-});
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-dm-sans',
-  display: 'swap',
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-playfair',
+  variable: '--font-quicksand',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Nirvana Yoga School | Yoga Alliance Certified',
-  description: 'A Sanctuary for the Soul in Rishikesh, India. Yoga Alliance Certified Teacher Training.',
+  title: 'House of Yogis Rishikesh | Yoga Alliance Certified Teacher Training in India',
+  description: 'Yoga Alliance certified 100, 200, 300 & 500 hour Hatha, Ashtanga Vinyasa & Kundalini teacher training courses in Rishikesh, India. A sanctuary for the soul on the banks of the Holy Ganga.',
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -43,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${cormorant.variable} ${dmSans.variable} ${playfair.variable} antialiased font-body`}>
+      <body className={`${quicksand.variable} ${quicksand.className} antialiased font-body`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

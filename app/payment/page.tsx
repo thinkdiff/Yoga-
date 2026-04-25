@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { courses } from '@/lib/data/courses';
 import { CheckCircle, Copy, MessageCircle, Phone } from 'lucide-react';
+import { contactInfo } from '@/lib/data/contact';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -16,7 +17,7 @@ function PaymentContent() {
 
   const UPI_ID = 'nirvanayogaschool@upi'; // ← Replace with real UPI ID
   const PAYPAL_LINK = 'https://paypal.me/nirvanayoga'; // ← Replace with real PayPal.me link
-  const WHATSAPP_NUMBER = '919876543210'; // ← Replace with real WhatsApp number
+  const WHATSAPP_NUMBER = contactInfo.phoneDigits;
   const BANK_DETAILS = {
     name: 'Nirvana Yoga School India Pvt Ltd',
     bank: 'HDFC Bank',

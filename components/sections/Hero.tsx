@@ -67,8 +67,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30 z-[1]" />
       </div>
 
-      {/* ── Sound Toggle Widget — LEFT SIDE ── */}
-      <div className="fixed bottom-8 left-6 z-[60] flex flex-col items-center gap-2">
+      {/* ── Sound Toggle Widget — UPPER LEFT SIDE ── */}
+      <div className="fixed top-24 left-6 z-[60] flex flex-col items-center gap-2">
         <AnimatePresence>
           {showPulse && isMuted && (
             <motion.div

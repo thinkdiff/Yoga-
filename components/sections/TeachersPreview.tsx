@@ -10,20 +10,20 @@ export default function TeachersPreview() {
   return (
     <section className="py-24 bg-white" id="teachers">
       <div className="container mx-auto px-4">
-        <SectionHeader 
-          title="Meet Our Expert Teachers"
-          subtitle="Learn from authentic Himalayan masters and highly qualified international instructors."
+        <SectionHeader
+          title="Meet Our Gurus"
+          subtitle="Authentic Himalayan teachers carrying living lineages of Hatha, Kundalini, Pranayama and Yoga Therapy."
         />
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
-          {teachers.slice(0, 4).map((teacher) => (
-            <TeacherCard key={teacher.id} teacher={teacher} />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 mt-12">
+          {teachers.map((teacher) => (
+            <TeacherCard key={teacher.id} teacher={teacher} variant="compact" />
           ))}
         </div>
 
         <div className="flex justify-center">
           <Button asChild variant="outline" size="lg" className="border-sage text-sage hover:bg-sage hover:text-white">
-            <Link href="/teachers">View All Teachers</Link>
+            <Link href="/teachers">Read Full Profiles</Link>
           </Button>
         </div>
       </div>

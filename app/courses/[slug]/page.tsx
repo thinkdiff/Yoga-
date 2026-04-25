@@ -1,5 +1,6 @@
 import { courses } from '@/lib/data/courses';
 import { teachers } from '@/lib/data/teachers';
+import { testimonials } from '@/lib/data/testimonials';
 import {
   defaultAccommodation,
   defaultDailySchedule,
@@ -40,6 +41,7 @@ import {
 import Link from 'next/link';
 import CourseSectionNav from '@/components/shared/CourseSectionNav';
 import YouTubeEmbed from '@/components/shared/YouTubeEmbed';
+import { contactInfo } from '@/lib/data/contact';
 
 
 export function generateStaticParams() {
@@ -90,12 +92,25 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
     { id: 'schedule', label: 'Schedule' },
     { id: 'stay', label: 'Stay & Food' },
     { id: 'dates', label: 'Dates & Fees' },
-    { id: 'registration', label: 'Registration' },
+    { id: 'gurus', label: 'Our Gurus' },
+    { id: 'reviews', label: 'Reviews' },
     { id: 'certification', label: 'Certification' },
     { id: 'faqs', label: 'FAQs' },
   ];
 
-  const whatsappHref = 'https://wa.me/919876543210?text=' + encodeURIComponent('Hi Nirvana Yoga School, I would like to know more about ' + course.title);
+  const courseReviews = (() => {
+    const matches = testimonials.filter((t) => {
+      const courseLower = course.title.toLowerCase();
+      const tCourseLower = t.course.toLowerCase();
+      return (
+        courseLower.includes(tCourseLower) ||
+        tCourseLower.split(' ').filter((w) => w.length > 3).some((w) => courseLower.includes(w))
+      );
+    });
+    return matches.length >= 2 ? matches.slice(0, 4) : testimonials.slice(0, 4);
+  })();
+
+  const whatsappHref = `https://wa.me/${contactInfo.phoneDigits}?text=` + encodeURIComponent('Hi House of Yogis, I would like to know more about ' + course.title);
 
   return (
     <main className="bg-white pb-24">
@@ -288,6 +303,66 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                   ))}
                 </tbody>
               </table>
+            </div>
+          </section>
+
+          <section id="gurus" className="scroll-mt-28">
+            <h2 className="font-display text-3xl md:text-4xl text-sage mb-3">Our Gurus</h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl">
+              Authentic Himalayan teachers, each carrying a living lineage of practice. You will spend your days under their guidance.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {(courseTeachers.length ? courseTeachers : teachers).map((t) => (
+                <Link
+                  key={t.id}
+                  href="/teachers"
+                  className="group bg-ivory/40 hover:bg-white border border-sage/10 hover:border-terracotta/30 rounded-2xl p-5 flex gap-5 transition-all"
+                >
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 border border-sage/10">
+                    <Image src={t.photo} alt={t.name} fill className="object-cover object-top" sizes="96px" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-display text-xl text-sage font-semibold leading-tight">{t.name}</h3>
+                    <p className="text-[10px] uppercase tracking-[0.16em] text-terracotta font-bold mt-1 mb-2">{t.title}</p>
+                    <p className="text-sm text-muted-foreground line-clamp-3">{t.introduction || t.bio}</p>
+                    {t.expertise && t.expertise.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 mt-3">
+                        {t.expertise.slice(0, 4).map((x) => (
+                          <Badge key={x} variant="outline" className="text-[10px] border-sage/20 text-sage bg-white">
+                            {x}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section id="reviews" className="scroll-mt-28">
+            <h2 className="font-display text-3xl md:text-4xl text-sage mb-3">Student Reviews</h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl">
+              From seekers who have walked this path before you.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {courseReviews.map((r) => (
+                <div key={r.id} className="bg-ivory/40 border border-sage/10 rounded-2xl p-6">
+                  <div className="flex items-center gap-1 mb-3 text-gold">
+                    {Array.from({ length: r.rating }).map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-gold" />
+                    ))}
+                  </div>
+                  <p className="text-sage/90 leading-relaxed italic mb-5">&ldquo;{r.text}&rdquo;</p>
+                  <div className="flex items-center justify-between pt-4 border-t border-sage/10 text-sm">
+                    <div>
+                      <div className="font-semibold text-sage">{r.name}</div>
+                      <div className="text-xs text-muted-foreground">{r.country} · {r.course}</div>
+                    </div>
+                    <span className="text-xs text-muted-foreground">{r.date}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
