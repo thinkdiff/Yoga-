@@ -2,8 +2,10 @@ import { cn } from '@/lib/utils';
 
 export default function Logo({
   className,
+  variant: _variant = 'dark',
 }: {
   className?: string;
+  variant?: 'dark' | 'light';
 }) {
   return (
     <div className={cn('shrink-0', className)}>
