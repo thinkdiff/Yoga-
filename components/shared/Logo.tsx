@@ -11,19 +11,19 @@ export default function Logo({
     <div className={cn('flex items-center gap-3 shrink-0 group', className)}>
       <div
         className={cn(
-          'relative w-11 h-11 rounded-full flex items-center justify-center overflow-hidden ring-1 transition-all duration-300 group-hover:scale-105',
+          'relative w-14 h-14 rounded-2xl flex items-center justify-center overflow-hidden border shadow-sm transition-all duration-300 group-hover:scale-105',
           variant === 'dark'
-            ? 'bg-gradient-to-br from-gold-light to-ivory ring-terracotta/20 text-sage'
-            : 'bg-white/95 ring-white/40 text-sage'
+            ? 'bg-gradient-to-br from-white to-ivory border-terracotta/15 text-sage'
+            : 'bg-white/95 border-white/40 text-sage'
         )}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/logo-house-of-yogis.svg"
           alt="House of Yogis logo"
-          width={36}
-          height={36}
-          className="w-9 h-9 object-contain"
+          width={52}
+          height={52}
+          className="w-[88%] h-[88%] object-contain"
           loading="eager"
           decoding="async"
         />

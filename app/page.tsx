@@ -4,6 +4,7 @@ import AboutPreview from '@/components/sections/AboutPreview';
 import CoursesGrid from '@/components/sections/CoursesGrid';
 import WhyRishikesh from '@/components/sections/WhyRishikesh';
 import RetreatsSection from '@/components/sections/RetreatsSection';
+import YogaGurus from '@/components/sections/YogaGurus';
 import TeachersPreview from '@/components/sections/TeachersPreview';
 import TestimonialsCarousel from '@/components/sections/TestimonialsCarousel';
 import VideoTestimonials from '@/components/sections/VideoTestimonials';
@@ -21,6 +22,7 @@ export default function Home() {
       <CoursesGrid />
       <WhyRishikesh />
       <RetreatsSection />
+      <YogaGurus />
       <TeachersPreview />
       <TestimonialsCarousel />
       <VideoTestimonials />

@@ -3,8 +3,6 @@
 import { VideoEmbed } from '@/lib/types';
 import YouTubeEmbed from './YouTubeEmbed';
 import SectionHeader from './SectionHeader';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
 interface YouTubeLibraryProps {
   videos: VideoEmbed[];
   title?: string;
@@ -31,7 +29,7 @@ export default function YouTubeLibrary({
               {mainVideos.map((vid) => (
                 <div key={vid.id} className="group">
                   <div className="rounded-2xl overflow-hidden shadow-lg aspect-video mb-4">
-                    <YouTubeEmbed youtubeId={vid.youtubeId} title={vid.title} />
+                    <YouTubeEmbed {...vid} />
                   </div>
                   <h4 className="font-display text-xl text-sage group-hover:text-terracotta transition-colors">
                     {vid.title}
@@ -48,7 +46,7 @@ export default function YouTubeLibrary({
               {shorts.map((short) => (
                 <div key={short.id} className="group">
                   <div className="rounded-xl overflow-hidden shadow-md aspect-[9/16] mb-3">
-                    <YouTubeEmbed youtubeId={short.youtubeId} title={short.title} />
+                    <YouTubeEmbed {...short} />
                   </div>
                   <h4 className="font-display text-sm text-sage group-hover:text-terracotta transition-colors line-clamp-2">
                     {short.title}

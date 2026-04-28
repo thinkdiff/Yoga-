@@ -24,8 +24,10 @@ export const youtubeLibrary: VideoEmbed[] = [
   },
   {
     id: 's1',
-    youtubeId: 'v8AYKMP6rOE',
-    title: 'Quick Sun Salutation',
+    source: 'local',
+    src: '/Videos/WhatsApp Video 2026-04-26 at 12.34.25.mp4',
+    poster: '/Photos for gellery and all web/DSC00407.jpg',
+    title: 'House of Yogis Rishikesh Short Tour',
     kind: 'short',
   },
   {

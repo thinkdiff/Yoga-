@@ -3,22 +3,10 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import SectionHeader from '../shared/SectionHeader';
+import { homepageGalleryRows } from '@/lib/data/media';
 
-const photos1 = [
-  'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80',
-  'https://images.unsplash.com/photo-1591291621164-2c6367723315?w=800&q=80',
-  'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
-  'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=80',
-];
-const photos2 = [
-  'https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=800&q=80',
-  'https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=800&q=80',
-  'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&q=80',
-  'https://images.unsplash.com/photo-1571417228847-2bf0d96a92dd?w=800&q=80',
-];
-
-const row1 = [...photos1, ...photos1, ...photos1, ...photos1];
-const row2 = [...photos2, ...photos2, ...photos2, ...photos2];
+const row1 = [...homepageGalleryRows.rowOne, ...homepageGalleryRows.rowOne];
+const row2 = [...homepageGalleryRows.rowTwo, ...homepageGalleryRows.rowTwo];
 
 export default function AnimatedGallery() {
   return (

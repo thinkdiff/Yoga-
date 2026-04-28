@@ -121,7 +121,7 @@ export default function VenuePage() {
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <SectionHeader title="A tour of the school" subtitle={schoolTourVideo.subtitle} />
-          <YouTubeEmbed youtubeId={schoolTourVideo.youtubeId} title={schoolTourVideo.title} />
+          <YouTubeEmbed {...schoolTourVideo} className="aspect-video" />
         </div>
       </section>
 

@@ -1,22 +1,5 @@
 import { Course } from '../types';
-
-const RISHIKESH_GALLERY = {
-  ganga: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80',
-  ashram: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200&q=80',
-  asana: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80',
-  meditation: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1200&q=80',
-  yogi: 'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=1200&q=80',
-  bridge: 'https://images.unsplash.com/photo-1591291621164-2c6367723315?w=1200&q=80',
-  flow: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=1200&q=80',
-  group: 'https://images.unsplash.com/photo-1571417228847-2bf0d96a92dd?w=1200&q=80',
-  sunset: 'https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=1200&q=80',
-  aarti: 'https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=1200&q=80',
-  himalaya: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80',
-  candle: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1200&q=80',
-};
-
-const galleryFor = (...keys: (keyof typeof RISHIKESH_GALLERY)[]) =>
-  keys.map((k) => RISHIKESH_GALLERY[k]);
+import { courseMediaBySlug } from './media';
 
 const ALL_TEACHERS = ['t1', 't2', 't3'];
 
@@ -117,8 +100,8 @@ export const courses: Course[] = [
       'Credit transfer toward our 200-Hour YTT',
     ]),
     teachers: ALL_TEACHERS,
-    images: galleryFor('asana', 'ganga', 'group'),
-    gallery: galleryFor('asana', 'ganga', 'group', 'meditation', 'sunset'),
+    images: courseMediaBySlug['100hr-hatha-ashtanga-vinyasa'].images,
+    gallery: courseMediaBySlug['100hr-hatha-ashtanga-vinyasa'].gallery,
     seoTitle: '100 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh | House of Yogis Rishikesh',
     seoDescription:
       '100 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh, India. 12-day foundation immersion on the banks of the Ganga. Yoga Alliance lineage. Enrol today.',
@@ -206,8 +189,8 @@ export const courses: Course[] = [
     ],
     inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-200 certification']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('asana', 'ganga', 'group'),
-    gallery: galleryFor('asana', 'ganga', 'group', 'meditation', 'aarti'),
+    images: courseMediaBySlug['200hr-hatha-ashtanga-vinyasa'].images,
+    gallery: courseMediaBySlug['200hr-hatha-ashtanga-vinyasa'].gallery,
     seoTitle: '200 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '200 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh India. 25-day Yoga Alliance certified RYT-200 immersion on the banks of the Ganga. Reserve your seat.',
@@ -282,8 +265,8 @@ export const courses: Course[] = [
     ],
     inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-500 (300hr) certification']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('flow', 'ashram', 'himalaya'),
-    gallery: galleryFor('flow', 'ashram', 'himalaya', 'meditation', 'sunset'),
+    images: courseMediaBySlug['300hr-hatha-ashtanga-vinyasa'].images,
+    gallery: courseMediaBySlug['300hr-hatha-ashtanga-vinyasa'].gallery,
     seoTitle: '300 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '300 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh India. Advanced 30-day RYT-500 immersion for RYT-200 graduates. Apply for our next batch.',
@@ -358,8 +341,8 @@ export const courses: Course[] = [
     ],
     inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-200 certification', 'Daily kirtan and mantra session']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('meditation', 'aarti', 'yogi'),
-    gallery: galleryFor('meditation', 'aarti', 'yogi', 'candle', 'ganga'),
+    images: courseMediaBySlug['200hr-hatha-kundalini'].images,
+    gallery: courseMediaBySlug['200hr-hatha-kundalini'].gallery,
     seoTitle: '200 Hour Hatha Kundalini Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '200 hour Hatha Kundalini yoga teacher training course in Rishikesh India. 25-day Yoga Alliance RYT-200 immersion blending kriyas, mantra and Hatha. Enrol today.',
@@ -434,8 +417,8 @@ export const courses: Course[] = [
     ],
     inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-500 (300hr) certification', 'Daily kirtan and mantra session']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('candle', 'aarti', 'meditation'),
-    gallery: galleryFor('candle', 'aarti', 'meditation', 'yogi', 'sunset'),
+    images: courseMediaBySlug['300hr-hatha-kundalini'].images,
+    gallery: courseMediaBySlug['300hr-hatha-kundalini'].gallery,
     seoTitle: '300 Hour Hatha Kundalini Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '300 hour Hatha Kundalini yoga teacher training course in Rishikesh India. Advanced 30-day RYT-500 immersion in kriyas, mantra and chakra sadhana. Reserve your place.',
@@ -510,8 +493,8 @@ export const courses: Course[] = [
     ],
     inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-500 certification', 'Two-month full-board accommodation']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('flow', 'himalaya', 'group'),
-    gallery: galleryFor('flow', 'himalaya', 'group', 'meditation', 'aarti'),
+    images: courseMediaBySlug['500hr-hatha-ashtanga-vinyasa'].images,
+    gallery: courseMediaBySlug['500hr-hatha-ashtanga-vinyasa'].gallery,
     seoTitle: '500 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '500 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh India. 60-day Yoga Alliance RYT-500 immersion. The complete teacher’s path. Apply now.',
@@ -594,8 +577,8 @@ export const courses: Course[] = [
     ],
     inclusions: baseInclusions.concat(['Yoga Alliance USA RYT-500 certification', 'Two-month full-board accommodation', 'Daily kirtan and mantra']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('aarti', 'flow', 'meditation'),
-    gallery: galleryFor('aarti', 'flow', 'meditation', 'candle', 'ganga'),
+    images: courseMediaBySlug['500hr-hatha-kundalini-vinyasa'].images,
+    gallery: courseMediaBySlug['500hr-hatha-kundalini-vinyasa'].gallery,
     seoTitle: '500 Hour Hatha Kundalini Vinyasa Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '500 hour Hatha Kundalini Vinyasa yoga teacher training course in Rishikesh India. 60-day Yoga Alliance RYT-500 immersion. The complete kriya, mantra and asana path.',
@@ -665,8 +648,8 @@ export const courses: Course[] = [
     ],
     inclusions: shortInclusions.concat(['Yin Yoga Teacher Training certification']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('meditation', 'asana', 'sunset'),
-    gallery: galleryFor('meditation', 'asana', 'sunset', 'candle', 'ganga'),
+    images: courseMediaBySlug['yin-yoga-ttc'].images,
+    gallery: courseMediaBySlug['yin-yoga-ttc'].gallery,
     seoTitle: 'Yin Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       'Yin Yoga teacher training course in Rishikesh India. 14-day specialty training in long-hold postures, meridian theory and mindful stillness on the banks of the Ganga.',
@@ -745,8 +728,8 @@ export const courses: Course[] = [
     ],
     inclusions: shortInclusions.concat(['Pre-Natal & Post-Natal Yoga Teacher Training certification']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('asana', 'meditation', 'group'),
-    gallery: galleryFor('asana', 'meditation', 'group', 'sunset', 'ganga'),
+    images: courseMediaBySlug['prenatal-postnatal-ttc'].images,
+    gallery: courseMediaBySlug['prenatal-postnatal-ttc'].gallery,
     seoTitle: 'Pre Natal Post Natal Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       'Pre-natal and post-natal yoga teacher training course in Rishikesh India. 14-day specialty training in trimester-safe sequencing, breathwork for labour and post-natal recovery.',
@@ -824,8 +807,8 @@ export const courses: Course[] = [
     ],
     inclusions: shortInclusions.concat(['Sound Healing Practitioner certification']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('candle', 'meditation', 'aarti'),
-    gallery: galleryFor('candle', 'meditation', 'aarti', 'yogi', 'sunset'),
+    images: courseMediaBySlug['sound-healing-course'].images,
+    gallery: courseMediaBySlug['sound-healing-course'].gallery,
     seoTitle: 'Sound Healing Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       'Sound healing course in Rishikesh India. 10-day immersion in Tibetan and crystal singing bowls, gongs, tuning forks, mantra and the design of full sound-bath sessions.',
@@ -904,8 +887,8 @@ export const courses: Course[] = [
     ],
     inclusions: shortInclusions.concat(['Aerial Yoga Teacher Training certification', 'Aerial hammock for the duration of the course']),
     teachers: ALL_TEACHERS,
-    images: galleryFor('flow', 'asana', 'group'),
-    gallery: galleryFor('flow', 'asana', 'group', 'sunset', 'ganga'),
+    images: courseMediaBySlug['aerial-yoga-ttc'].images,
+    gallery: courseMediaBySlug['aerial-yoga-ttc'].gallery,
     seoTitle: 'Aerial Yoga Teacher Training Course in Rishikesh | House of Yogis Rishikesh',
     seoDescription:
       'Aerial yoga teacher training course in Rishikesh. 14-day specialty training in hammock-based asana, safe inversions and creative aerial sequencing. Reserve your seat.',
@@ -975,8 +958,8 @@ export const courses: Course[] = [
     ],
     inclusions: shortInclusions.concat(['Meditation Course completion certificate', 'Mala beads for daily practice']),
     teachers: ['t1', 't2'],
-    images: galleryFor('meditation', 'candle', 'sunset'),
-    gallery: galleryFor('meditation', 'candle', 'sunset', 'aarti', 'ganga'),
+    images: courseMediaBySlug['meditation-course'].images,
+    gallery: courseMediaBySlug['meditation-course'].gallery,
     seoTitle: 'Short Meditation Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       'Short meditation course in Rishikesh India. 7-day silent immersion in trataka, mantra, vipassana and self-inquiry. A foundation for a lifelong meditation practice.',

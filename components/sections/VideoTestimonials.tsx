@@ -13,7 +13,7 @@ export default function VideoTestimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonialVideos.map((video) => (
             <div key={video.id} className="flex flex-col gap-3">
-              <YouTubeEmbed youtubeId={video.youtubeId} title={video.title} />
+              <YouTubeEmbed {...video} className="aspect-video" />
               <div>
                 <h3 className="font-display text-xl text-sage font-medium">{video.title}</h3>
                 {video.subtitle && <p className="text-sm text-muted-foreground">{video.subtitle}</p>}

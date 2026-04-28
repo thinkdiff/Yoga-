@@ -113,10 +113,13 @@ export interface Retreat {
 
 export interface VideoEmbed {
   id: string;
-  youtubeId: string;
+  youtubeId?: string;
+  src?: string;
+  poster?: string;
   title: string;
   subtitle?: string;
   kind?: 'video' | 'short';
+  source?: 'youtube' | 'local';
 }
 
 export interface VenueFacility {
