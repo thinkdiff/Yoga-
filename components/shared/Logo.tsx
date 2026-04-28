@@ -11,27 +11,27 @@ export default function Logo({
     <div className={cn('flex items-center gap-3 shrink-0 group', className)}>
       <div
         className={cn(
-          'relative w-14 h-14 rounded-2xl flex items-center justify-center overflow-hidden border shadow-sm transition-all duration-300 group-hover:scale-105',
+          'relative w-[68px] h-[68px] rounded-[22px] flex items-center justify-center overflow-hidden border bg-white shadow-[0_8px_24px_rgba(139,79,95,0.08)] transition-all duration-300 group-hover:scale-[1.02]',
           variant === 'dark'
-            ? 'bg-gradient-to-br from-white to-ivory border-terracotta/15 text-sage'
-            : 'bg-white/95 border-white/40 text-sage'
+            ? 'border-terracotta/12 text-sage'
+            : 'border-white/50 text-sage'
         )}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/logo-house-of-yogis.svg"
           alt="House of Yogis logo"
-          width={52}
-          height={52}
-          className="w-[88%] h-[88%] object-contain"
+          width={62}
+          height={62}
+          className="w-[90%] h-[90%] object-contain"
           loading="eager"
           decoding="async"
         />
       </div>
-      <div className="flex flex-col leading-none">
+      <div className="flex flex-col leading-none pt-0.5">
         <span
           className={cn(
-            'font-brand italic text-[1.45rem] md:text-[1.55rem] font-semibold tracking-tight',
+            'font-brand italic text-[1.9rem] md:text-[2.1rem] font-semibold tracking-[-0.03em]',
             variant === 'dark' ? 'text-sage' : 'text-white'
           )}
         >
@@ -39,7 +39,7 @@ export default function Logo({
         </span>
         <span
           className={cn(
-            'text-[10px] uppercase tracking-[0.32em] font-semibold mt-0.5',
+            'text-[9px] md:text-[10px] uppercase tracking-[0.34em] font-semibold mt-1.5 pl-1',
             variant === 'dark' ? 'text-terracotta/80' : 'text-gold'
           )}
         >

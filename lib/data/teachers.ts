@@ -65,6 +65,7 @@ export const teachers: Teacher[] = [
     title: 'Yoga Therapy, Anatomy & Yogic Science',
     bio: 'Dr. Mahesh Prasad is a Ph.D. in Yoga Therapy and a gold medalist in both his post-graduate diploma and master\'s degree in Yogic Science. He combines deep academic rigour with the lived wisdom of traditional practice.',
     photo: '/Teachers/maheshprashad.jpeg',
+    photoPosition: 'center 18%',
     specializations: ['Yoga Therapy', 'Hatha'],
     certifications: [
       'Ph.D. in Yoga Therapy',

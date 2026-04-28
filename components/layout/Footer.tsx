@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
 import { courses } from '@/lib/data/courses';
 import { contactInfo } from '@/lib/data/contact';
@@ -64,25 +64,38 @@ export default function Footer() {
 
           <div>
             <h4 className="text-white font-display text-xl mb-6 font-medium">Contact Us</h4>
-            <address className="not-italic text-sm flex flex-col gap-4">
-              <p>
-                {contactInfo.address.line1}<br />
-                {contactInfo.address.line2}<br />
-                {contactInfo.address.line3}
-              </p>
-              <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 shrink-0" />
-                <a href={`mailto:${contactInfo.email}`} className="hover:text-gold transition-colors break-all">{contactInfo.email}</a>
-              </p>
-              <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4 shrink-0" />
-                <a href={`tel:${contactInfo.phoneDigits}`} className="hover:text-gold transition-colors">{contactInfo.phone}</a>
-              </p>
+            <address className="not-italic text-sm flex flex-col gap-5">
+              <div className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/8 text-gold">
+                  <MapPin className="w-4 h-4" />
+                </span>
+                <p className="leading-7">
+                  {contactInfo.address.line1}<br />
+                  {contactInfo.address.line2}<br />
+                  {contactInfo.address.line3}
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/8 text-gold">
+                  <Mail className="w-4 h-4" />
+                </span>
+                <a href={`mailto:${contactInfo.email}`} className="hover:text-gold transition-colors break-all leading-6">
+                  {contactInfo.email}
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/8 text-gold">
+                  <Phone className="w-4 h-4" />
+                </span>
+                <a href={`tel:${contactInfo.phoneDigits}`} className="hover:text-gold transition-colors leading-6">
+                  {contactInfo.phone}
+                </a>
+              </div>
               <a
                 href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-md hover:bg-[#128C7E] transition-colors w-max mt-2"
+                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-md hover:bg-[#128C7E] transition-colors w-max mt-2 ml-12"
               >
                 <Phone className="w-4 h-4" />
                 WhatsApp Us

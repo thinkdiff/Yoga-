@@ -14,7 +14,14 @@ export default function TeacherCard({
     return (
       <div className="group flex flex-col items-center text-center p-6 rounded-2xl bg-ivory/50 hover:bg-white border border-transparent hover:border-gold/20 transition-all duration-300">
         <div className="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-white shadow-md group-hover:shadow-lg transition-shadow">
-          <Image src={teacher.photo} alt={teacher.name} fill className="object-cover" sizes="160px" />
+          <Image
+            src={teacher.photo}
+            alt={teacher.name}
+            fill
+            className="object-cover"
+            style={{ objectPosition: teacher.photoPosition || 'center top' }}
+            sizes="160px"
+          />
         </div>
         <h3 className="font-display text-2xl text-sage font-medium mb-1">{teacher.name}</h3>
         <p className="text-terracotta text-xs uppercase tracking-wider mb-3 font-semibold">{teacher.title}</p>
@@ -36,6 +43,7 @@ export default function TeacherCard({
           alt={teacher.name}
           fill
           className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          style={{ objectPosition: teacher.photoPosition || 'center top' }}
           sizes="(max-width: 768px) 100vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent" />

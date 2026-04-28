@@ -78,6 +78,7 @@ export interface Teacher {
   title: string;
   bio: string;
   photo: string;
+  photoPosition?: string;
   specializations: CourseStyle[];
   certifications: string[];
   yearsExp: string;
