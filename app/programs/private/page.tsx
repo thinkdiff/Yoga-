@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { User, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Private Yoga Sessions in Rishikesh | Nirvana Yoga School',
+  title: 'Private Yoga Sessions in Rishikesh | House of Yogis Rishikesh',
   description: 'One-on-one private yoga sessions in Rishikesh with senior teachers. Tailored entirely to your goals, level, and schedule.',
 };
 
@@ -28,7 +28,7 @@ export default function PrivateSessionsPage() {
             <section>
               <h2 className="font-display text-3xl text-sage font-bold mb-4">Yoga, Your Way</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Nothing accelerates a yoga practice like one-to-one attention from an experienced teacher. Private sessions at Nirvana Yoga School are fully customised lessons with a senior teacher of your choosing — designed completely around your body, your goals, and your available time.
+                Nothing accelerates a yoga practice like one-to-one attention from an experienced teacher. Private sessions at House of Yogis Rishikesh are fully customised lessons with a senior teacher of your choosing — designed completely around your body, your goals, and your available time.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Whether you want to deepen asana, learn pranayama for the first time, recover from an injury, or refine your teaching methodology, we build every session around what you need — not a fixed curriculum.

@@ -4,7 +4,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Teachers — Acharya Mandeep, Praveen Rajput & Dr. Mahesh Prasad | Nirvana Yoga School Rishikesh',
+  title: 'Our Teachers — Acharya Mandeep, Praveen Rajput & Dr. Mahesh Prasad | House of Yogis Rishikesh',
   description:
     'Meet our gurus — Acharya Mandeep Bhatt, Praveen Rajput and Dr. Mahesh Prasad. Authentic Himalayan teachers of Hatha, Kundalini, Pranayama, Meditation and Yoga Therapy in Rishikesh, India.',
 };

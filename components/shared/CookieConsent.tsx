@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Cookie, X } from 'lucide-react';
 
-const STORAGE_KEY = 'nirvana.cookieConsent';
+const STORAGE_KEY = 'houseofyogis.cookieConsent';
 
 type ConsentState = 'accepted' | 'rejected' | null;
 

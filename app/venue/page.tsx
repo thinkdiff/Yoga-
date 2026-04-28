@@ -11,7 +11,7 @@ import { schoolTourVideo } from '@/lib/data/videos';
 import { contactInfo } from '@/lib/data/contact';
 
 export const metadata: Metadata = {
-  title: 'Our Venue in Rishikesh | Nirvana Yoga School',
+  title: 'Our Venue in Rishikesh | House of Yogis Rishikesh',
   description:
     'Explore our yoga school in Tapovan, Rishikesh — airy shalas, sattvic dining, peaceful rooms, and easy access to the Ganges and Himalayas.',
 };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Award, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Advanced Yoga Practice Program | Nirvana Yoga School Rishikesh',
+  title: 'Advanced Yoga Practice Program | House of Yogis Rishikesh',
   description: 'Deepen your practice with our Advanced Yoga immersion in Rishikesh. For experienced practitioners and teachers.',
 };
 

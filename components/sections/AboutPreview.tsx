@@ -24,13 +24,13 @@ export default function AboutPreview() {
               <span>Our Heritage</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl text-sage font-medium leading-tight mb-6">
-              Welcome to Nirvana — A Sanctuary for the Soul
+              Welcome to House of Yogis — A Sanctuary for the Soul
             </h2>
             
             <div className="space-y-4 text-muted-foreground font-body leading-relaxed mb-8">
               <p>
                 Nestled in the lush foothills of the Himalayas, alongside the sacred Ganges river, 
-                Nirvana Yoga School provides an authentic and transformative space for seekers from across the globe.
+                House of Yogis Rishikesh provides an authentic and transformative space for seekers from across the globe.
               </p>
               <p>
                 We honor the ancient roots of yogic science while bringing a modern, accessible approach 

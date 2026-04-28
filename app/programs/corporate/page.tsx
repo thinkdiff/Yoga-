@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Briefcase, CheckCircle, ArrowRight, Users, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Corporate Wellness Yoga Programs | Nirvana Yoga School',
+  title: 'Corporate Wellness Yoga Programs | House of Yogis Rishikesh',
   description: 'Bespoke corporate yoga and wellness programs for teams and organisations. On-site or retreat-based.',
 };
 

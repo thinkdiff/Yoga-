@@ -4,7 +4,7 @@ import { Calendar, Clock, Users, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Yoga Workshops in Rishikesh | Nirvana Yoga School',
+  title: 'Yoga Workshops in Rishikesh | House of Yogis Rishikesh',
   description: 'Join our immersive weekend yoga workshops in Rishikesh – from pranayama intensives to sound healing and Ayurveda.',
 };
 

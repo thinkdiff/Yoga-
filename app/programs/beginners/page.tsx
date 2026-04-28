@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight, Compass } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Beginner's Yoga Journey | Nirvana Yoga School Rishikesh",
+  title: "Beginner's Yoga Journey | House of Yogis Rishikesh",
   description: "Start your yoga journey in Rishikesh with expert guidance. Perfect intro program for absolute beginners.",
 };
 

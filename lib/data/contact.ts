@@ -13,5 +13,5 @@ export const contactInfo = {
     youtube: 'https://www.youtube.com/@NirvanaYogaSchool',
   },
   whatsappDefaultMessage:
-    "Namaste! I'd like to know more about your Yoga Teacher Training programs at Nirvana Yoga School.",
+    "Namaste! I'd like to know more about your Yoga Teacher Training programs at House of Yogis Rishikesh.",
 };

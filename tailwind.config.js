@@ -67,6 +67,7 @@ module.exports = {
         body: ['var(--font-quicksand)', 'ui-sans-serif', 'sans-serif'],
         accent: ['var(--font-quicksand)', 'ui-sans-serif', 'sans-serif'],
         sans: ['var(--font-quicksand)', 'ui-sans-serif', 'sans-serif'],
+        brand: ['"Cormorant Garamond"', '"EB Garamond"', 'Garamond', 'Georgia', 'ui-serif', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

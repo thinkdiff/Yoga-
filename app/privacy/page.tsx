@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import SectionHeader from '@/components/shared/SectionHeader';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Nirvana Yoga School',
-  description: 'How Nirvana Yoga School collects, uses, and protects your personal information.',
+  title: 'Privacy Policy | House of Yogis Rishikesh',
+  description: 'How House of Yogis Rishikesh collects, uses, and protects your personal information.',
 };
 
 export default function PrivacyPage() {
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
 
         <div className="prose prose-sage max-w-none text-muted-foreground leading-relaxed flex flex-col gap-5">
           <p>
-            Nirvana Yoga School (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy. This policy explains what information we collect when you use our website and how we use it.
+            House of Yogis Rishikesh (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy. This policy explains what information we collect when you use our website and how we use it.
           </p>
 
           <h2 className="font-display text-2xl text-sage mt-4">Information we collect</h2>
@@ -35,8 +35,8 @@ export default function PrivacyPage() {
           <h2 className="font-display text-2xl text-sage mt-4">Contact us</h2>
           <p>
             For any privacy-related questions, please write to{' '}
-            <a href="mailto:nirvanayogaschool@gmail.com" className="text-terracotta hover:underline">
-              nirvanayogaschool@gmail.com
+            <a href="mailto:info@houseofyogis.com" className="text-terracotta hover:underline">
+              info@houseofyogis.com
             </a>
             .
           </p>

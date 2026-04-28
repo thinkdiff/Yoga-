@@ -5,7 +5,7 @@ export const faqs: FAQ[] = [
     id: 'f1',
     question: 'How much does it cost to learn yoga in India?',
     answer:
-      'Yoga Teacher Training in India generally costs between $700 and $1,800. At Nirvana Yoga School the tuition covers the full training program, accommodation, three sattvic meals a day, course materials, and Yoga Alliance certification.',
+      'Yoga Teacher Training in India generally costs between $700 and $1,800. At House of Yogis Rishikesh the tuition covers the full training program, accommodation, three sattvic meals a day, course materials, and Yoga Alliance certification.',
   },
   {
     id: 'f2',

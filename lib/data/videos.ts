@@ -4,7 +4,7 @@ export const youtubeLibrary: VideoEmbed[] = [
   {
     id: 'v1',
     youtubeId: 'wX78iKhInsc',
-    title: 'A Day at Nirvana Yoga Ashram',
+    title: 'A Day at House of Yogis Ashram',
     subtitle: 'Experience the magic of Rishikesh',
     kind: 'video',
   },
@@ -47,7 +47,7 @@ export const testimonialVideos = youtubeLibrary.filter(v => v.kind === 'video');
 export const schoolTourVideo: VideoEmbed = {
   id: 'tour',
   youtubeId: 'wX78iKhInsc',
-  title: 'A Tour of Nirvana Yoga School',
+  title: 'A Tour of House of Yogis Rishikesh',
   subtitle: 'Step inside our ashram in Rishikesh and see where the transformation happens.',
   kind: 'video',
 };

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import BlogPreview from '@/components/sections/BlogPreview';
 
 export const metadata: Metadata = {
-  title: 'Blog | Nirvana Yoga School',
+  title: 'Blog | House of Yogis Rishikesh',
   description: 'Read the latest updates, spiritual teachings, and guides from our yoga masters.',
 };
 

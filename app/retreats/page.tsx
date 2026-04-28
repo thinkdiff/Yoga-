@@ -7,7 +7,7 @@ import { Clock, Check } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Yoga Retreats in Rishikesh | Nirvana',
+  title: 'Yoga Retreats in Rishikesh | House of Yogis',
   description: 'Relax and rejuvenate with our carefully curated yoga and wellness retreats.',
 };
 

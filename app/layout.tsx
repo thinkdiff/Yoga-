@@ -16,6 +16,7 @@ const quicksand = Quicksand({
   display: 'swap',
 });
 
+
 export const metadata: Metadata = {
   title: 'House of Yogis Rishikesh | Yoga Alliance Certified Teacher Training in India',
   description: 'Yoga Alliance certified 100, 200, 300 & 500 hour Hatha, Ashtanga Vinyasa & Kundalini teacher training courses in Rishikesh, India. A sanctuary for the soul on the banks of the Holy Ganga.',

@@ -4,7 +4,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Online Yoga Teacher Training | Nirvana Yoga School',
+  title: 'Online Yoga Teacher Training | House of Yogis Rishikesh',
   description:
     'Train with our Rishikesh faculty online. Live classes, recorded modules, mentorship, and Yoga Alliance certification.',
 };

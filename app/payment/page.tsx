@@ -15,11 +15,11 @@ function PaymentContent() {
   const [copiedUpi, setCopiedUpi] = useState(false);
   const [activeTab, setActiveTab] = useState<'upi' | 'paypal' | 'wire' | 'whatsapp'>('upi');
 
-  const UPI_ID = 'nirvanayogaschool@upi'; // ← Replace with real UPI ID
-  const PAYPAL_LINK = 'https://paypal.me/nirvanayoga'; // ← Replace with real PayPal.me link
+  const UPI_ID = 'houseofyogis@upi'; // ← Replace with real UPI ID
+  const PAYPAL_LINK = 'https://paypal.me/houseofyogis'; // ← Replace with real PayPal.me link
   const WHATSAPP_NUMBER = contactInfo.phoneDigits;
   const BANK_DETAILS = {
-    name: 'Nirvana Yoga School India Pvt Ltd',
+    name: 'House of Yogis Rishikesh India Pvt Ltd',
     bank: 'HDFC Bank',
     account: '50100XXXXXXXXXX',
     ifsc: 'HDFC0000XXX',
@@ -144,7 +144,7 @@ function PaymentContent() {
 
               <div className="bg-[#003087] text-white rounded-2xl px-8 py-6 flex flex-col items-center gap-3 w-full max-w-sm">
                 <span className="text-3xl font-bold tracking-tight">PayPal</span>
-                <span className="text-white/70 text-sm">{course ? `${courseTitle} — $${depositAmount} deposit` : 'Nirvana Yoga School'}</span>
+                <span className="text-white/70 text-sm">{course ? `${courseTitle} — $${depositAmount} deposit` : 'House of Yogis Rishikesh'}</span>
                 <a
                   href={PAYPAL_LINK}
                   target="_blank"
@@ -157,7 +157,7 @@ function PaymentContent() {
 
               <p className="text-xs text-muted-foreground text-center">
                 PayPal accepts Visa, Mastercard, Amex, and local payment methods in 190+ countries.<br />
-                After payment, email your confirmation to <span className="font-bold text-sage">info@nirvanayogaschool.com</span>
+                After payment, email your confirmation to <span className="font-bold text-sage">info@houseofyogis.com</span>
               </p>
             </div>
           )}
@@ -179,7 +179,7 @@ function PaymentContent() {
               </div>
               <div className="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 text-sm text-amber-800">
                 <p className="font-semibold mb-1">After transferring:</p>
-                <p>Email the transfer receipt to <span className="font-bold">info@nirvanayogaschool.com</span> with your name and chosen course. We will confirm your seat within 24 hours.</p>
+                <p>Email the transfer receipt to <span className="font-bold">info@houseofyogis.com</span> with your name and chosen course. We will confirm your seat within 24 hours.</p>
               </div>
             </div>
           )}

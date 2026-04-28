@@ -4,7 +4,7 @@ import SectionHeader from '@/components/shared/SectionHeader';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Yoga Teacher Training Courses in Rishikesh, India — 100, 200, 300 & 500 Hour | Nirvana Yoga School',
+  title: 'Yoga Teacher Training Courses in Rishikesh, India — 100, 200, 300 & 500 Hour | House of Yogis Rishikesh',
   description:
     'Yoga Alliance certified 100, 200, 300 and 500 hour Hatha, Ashtanga Vinyasa and Kundalini teacher training courses in Rishikesh, India. Plus Yin, Pre-natal, Aerial, Sound Healing & Meditation specialty courses.',
 };

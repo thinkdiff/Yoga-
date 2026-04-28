@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BookOpen, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Yoga Poses Library | Nirvana Yoga School',
+  title: 'Yoga Poses Library | House of Yogis Rishikesh',
   description: 'Browse our library of classical yoga poses with Sanskrit names, alignment cues, benefits, and modifications.',
 };
 

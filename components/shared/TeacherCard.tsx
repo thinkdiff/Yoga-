@@ -38,10 +38,14 @@ export default function TeacherCard({
           className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-sage/90 via-sage/0 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <h3 className="font-display text-2xl font-bold leading-tight">{teacher.name}</h3>
-          <p className="text-gold text-xs uppercase tracking-[0.18em] font-semibold mt-1">
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6">
+          <h3
+            className="font-display text-2xl font-bold leading-tight text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]"
+          >
+            {teacher.name}
+          </h3>
+          <p className="text-gold text-xs uppercase tracking-[0.18em] font-semibold mt-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
             {teacher.title}
           </p>
         </div>

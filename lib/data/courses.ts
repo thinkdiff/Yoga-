@@ -21,7 +21,7 @@ const galleryFor = (...keys: (keyof typeof RISHIKESH_GALLERY)[]) =>
 const ALL_TEACHERS = ['t1', 't2', 't3'];
 
 const commonLong200: string[] = [
-  'At Nirvana Yoga School, the 200-Hour Yoga Teacher Training is both a certification and a rite of passage — an initiation into a profoundly transformative path of self-discovery, healing, and empowerment. Recognised by Yoga Alliance USA, this foundational course is carefully designed to balance practical learning with the rich philosophy and timeless wisdom that yoga embodies.',
+  'At House of Yogis Rishikesh, the 200-Hour Yoga Teacher Training is both a certification and a rite of passage — an initiation into a profoundly transformative path of self-discovery, healing, and empowerment. Recognised by Yoga Alliance USA, this foundational course is carefully designed to balance practical learning with the rich philosophy and timeless wisdom that yoga embodies.',
   'Rishikesh — the sacred birthplace of yoga, cradled by the shimmering waters of the Holy Ganga — is the setting for your journey. For 25 immersive days you live, breathe, eat, and study yoga in one of the most revered spiritual ecosystems on earth.',
   'Our curriculum offers a robust framework in asana, pranayama, meditation, anatomy, teaching methodology, adjustments, and the philosophical lineages of Hatha, Ashtanga Vinyasa and Kundalini. Beyond technique, the deeper transformation arises quietly: when mind, body and spirit settle into harmony, a new sense of presence, purpose and peace begins to take root within you.',
 ];
@@ -119,7 +119,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('asana', 'ganga', 'group'),
     gallery: galleryFor('asana', 'ganga', 'group', 'meditation', 'sunset'),
-    seoTitle: '100 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh | Nirvana Yoga School',
+    seoTitle: '100 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh | House of Yogis Rishikesh',
     seoDescription:
       '100 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh, India. 12-day foundation immersion on the banks of the Ganga. Yoga Alliance lineage. Enrol today.',
   },
@@ -208,7 +208,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('asana', 'ganga', 'group'),
     gallery: galleryFor('asana', 'ganga', 'group', 'meditation', 'aarti'),
-    seoTitle: '200 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: '200 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '200 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh India. 25-day Yoga Alliance certified RYT-200 immersion on the banks of the Ganga. Reserve your seat.',
   },
@@ -284,7 +284,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('flow', 'ashram', 'himalaya'),
     gallery: galleryFor('flow', 'ashram', 'himalaya', 'meditation', 'sunset'),
-    seoTitle: '300 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: '300 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '300 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh India. Advanced 30-day RYT-500 immersion for RYT-200 graduates. Apply for our next batch.',
   },
@@ -360,7 +360,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('meditation', 'aarti', 'yogi'),
     gallery: galleryFor('meditation', 'aarti', 'yogi', 'candle', 'ganga'),
-    seoTitle: '200 Hour Hatha Kundalini Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: '200 Hour Hatha Kundalini Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '200 hour Hatha Kundalini yoga teacher training course in Rishikesh India. 25-day Yoga Alliance RYT-200 immersion blending kriyas, mantra and Hatha. Enrol today.',
   },
@@ -436,7 +436,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('candle', 'aarti', 'meditation'),
     gallery: galleryFor('candle', 'aarti', 'meditation', 'yogi', 'sunset'),
-    seoTitle: '300 Hour Hatha Kundalini Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: '300 Hour Hatha Kundalini Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '300 hour Hatha Kundalini yoga teacher training course in Rishikesh India. Advanced 30-day RYT-500 immersion in kriyas, mantra and chakra sadhana. Reserve your place.',
   },
@@ -512,7 +512,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('flow', 'himalaya', 'group'),
     gallery: galleryFor('flow', 'himalaya', 'group', 'meditation', 'aarti'),
-    seoTitle: '500 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: '500 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '500 hour Hatha Ashtanga Vinyasa yoga teacher training course in Rishikesh India. 60-day Yoga Alliance RYT-500 immersion. The complete teacher’s path. Apply now.',
   },
@@ -596,7 +596,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('aarti', 'flow', 'meditation'),
     gallery: galleryFor('aarti', 'flow', 'meditation', 'candle', 'ganga'),
-    seoTitle: '500 Hour Hatha Kundalini Vinyasa Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: '500 Hour Hatha Kundalini Vinyasa Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       '500 hour Hatha Kundalini Vinyasa yoga teacher training course in Rishikesh India. 60-day Yoga Alliance RYT-500 immersion. The complete kriya, mantra and asana path.',
   },
@@ -667,7 +667,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('meditation', 'asana', 'sunset'),
     gallery: galleryFor('meditation', 'asana', 'sunset', 'candle', 'ganga'),
-    seoTitle: 'Yin Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: 'Yin Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       'Yin Yoga teacher training course in Rishikesh India. 14-day specialty training in long-hold postures, meridian theory and mindful stillness on the banks of the Ganga.',
   },
@@ -747,7 +747,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('asana', 'meditation', 'group'),
     gallery: galleryFor('asana', 'meditation', 'group', 'sunset', 'ganga'),
-    seoTitle: 'Pre Natal Post Natal Yoga Teacher Training Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: 'Pre Natal Post Natal Yoga Teacher Training Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       'Pre-natal and post-natal yoga teacher training course in Rishikesh India. 14-day specialty training in trimester-safe sequencing, breathwork for labour and post-natal recovery.',
   },
@@ -826,7 +826,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('candle', 'meditation', 'aarti'),
     gallery: galleryFor('candle', 'meditation', 'aarti', 'yogi', 'sunset'),
-    seoTitle: 'Sound Healing Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: 'Sound Healing Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       'Sound healing course in Rishikesh India. 10-day immersion in Tibetan and crystal singing bowls, gongs, tuning forks, mantra and the design of full sound-bath sessions.',
   },
@@ -906,7 +906,7 @@ export const courses: Course[] = [
     teachers: ALL_TEACHERS,
     images: galleryFor('flow', 'asana', 'group'),
     gallery: galleryFor('flow', 'asana', 'group', 'sunset', 'ganga'),
-    seoTitle: 'Aerial Yoga Teacher Training Course in Rishikesh | Nirvana Yoga School',
+    seoTitle: 'Aerial Yoga Teacher Training Course in Rishikesh | House of Yogis Rishikesh',
     seoDescription:
       'Aerial yoga teacher training course in Rishikesh. 14-day specialty training in hammock-based asana, safe inversions and creative aerial sequencing. Reserve your seat.',
   },
@@ -977,7 +977,7 @@ export const courses: Course[] = [
     teachers: ['t1', 't2'],
     images: galleryFor('meditation', 'candle', 'sunset'),
     gallery: galleryFor('meditation', 'candle', 'sunset', 'aarti', 'ganga'),
-    seoTitle: 'Short Meditation Course in Rishikesh India | Nirvana Yoga School',
+    seoTitle: 'Short Meditation Course in Rishikesh India | House of Yogis Rishikesh',
     seoDescription:
       'Short meditation course in Rishikesh India. 7-day silent immersion in trataka, mantra, vipassana and self-inquiry. A foundation for a lifelong meditation practice.',
   },

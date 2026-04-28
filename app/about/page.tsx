@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About Nirvana Yoga School | Our Story & Philosophy',
-  description: 'Learn about the heritage, philosophy, and mission of Nirvana Yoga School in Rishikesh.',
+  title: 'About House of Yogis | Our Story & Philosophy',
+  description: 'Learn about the heritage, philosophy, and mission of House of Yogis Rishikesh in Rishikesh.',
 };
 
 export default function AboutPage() {
@@ -22,7 +22,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <h3 className="font-display text-4xl text-sage">Rooted in Tradition. Designed for the Future.</h3>
-            <p>Nirvana Yoga School was founded with a singular vision: to preserve the authentic, unbroken lineages of Indian Yoga while providing a safe, comfortable, and highly educational sanctuary for international seekers.</p>
+            <p>House of Yogis Rishikesh was founded with a singular vision: to preserve the authentic, unbroken lineages of Indian Yoga while providing a safe, comfortable, and highly educational sanctuary for international seekers.</p>
             <p>Our ashram is situated precisely where the spiritual energies of the Himalayas merge with the flowing grace of the Ganges. Here, we believe yoga is not merely a physical exercise, but a profound system of inner technology.</p>
             <div className="pt-6 border-t border-border flex gap-8">
               <div>
